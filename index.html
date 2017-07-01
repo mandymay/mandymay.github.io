@@ -35,45 +35,64 @@
 */
 body {
 	padding: 0;
-    	margin: 0;
+    margin: 0;
 }
 ul {
 	list-style-type: none;
-    	padding: 0;
-    	margin: 0;
+    padding: 0;
+    margin: 0;
 }
 menu {
 	margin: 0;
-    	padding: 0;
+    padding: 0;
 }
 nav {
 	position: fixed;
-   	top: 0;
-    	width: 100%;
+    top: 0;
+    width: 100%;
 }
 .nav-dots {
 	border-radius: 50%;
-    	height: 10px;
-    	width: 10px;
+    height: 10px;
+    width: 10px;
 }
 .container {
 	position: relative;
 	margin: 0 auto;
-   	max-width: 700px;
-   	padding: 0 16px;
+    max-width: 700px;
+    padding: 0 16px;
+}
+.block {
+	display: block; !important
+}
+.inline {
+	display: inline-block; !important
+}
+.hide {
+	display: none; !important
+}
+
+/*
+*load transitions
+*/
+.load-line {
+	height: 1px;
+    background-color: #333;
+    width: 0;
 }
 
 
 /*
 *bg
-*/
+*/ 
 .full-bg {
 	background-repeat: no-repeat;
-   	background-position: center;
-   	background-size: cover;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
 }
 .bg1 {
-	background-image: url("https://raw.githubusercontent.com/mandymay/mandymay.github.io/master/images/bridal/MMS_1307.jpg");
+	background-image: url("https://github.com/mandymay/mandymay.github.io/blob/master/images/bridal/MMS_1011.jpg?raw=true");
 }
 .default-bg {
 	background-color: #333;
@@ -84,14 +103,17 @@ nav {
 */
 p, h1, h3 {
 	color: #333;
-    	font-family: arial;
+    font-family: arial;
 }
 h2 a {
 	color: #999;
 	font-family: arial;
-    	font-size: 12px;
-    	font-weight: normal;
-    	text-decoration: none;
+    font-size: 12px;
+    font-weight: normal;
+    text-decoration: none;
+}
+h2 a:hover {
+	color: #e1e1e1;
 }
 .spaced-2 {
 	letter-spacing: 2px;
@@ -115,14 +137,27 @@ h2 a {
 /*
 *positions
 */
+.relative {
+	position: relative;
+}
+.fixed {
+	position: fixed; !important
+}
+.absolute {
+	position: absolute;
+}
 .middle {
 	position: absolute;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
-    	top: 50%;
-    	left: 50%;
+    top: 50%;
+    left: 50%;
 }
-full-width {
+.full-screen {
+	height: 100vh;
+    width: 100vw;
+}
+.full-width {
 	width: 100%;
 }
 .left {
@@ -133,25 +168,25 @@ full-width {
 }
 .abs-left {
 	position: absolute;
-    	left: 16px;
+    left: 16px;
 }
 .abs-right {
 	position: absolute;
-    	right: 16px;
+    right: 16px;
 }
 .left-menu {
  	position: fixed;
-    	left: 10%;
+    left: 10%;
 }
 .right-menu {
  	position: fixed;
-    	right: 10%;
+    right: 10%;
 }
 .valign {
 	position: absolute;
 	-webkit-transform: translate(0, -50%);
 	transform: translate(0, -50%);
-    	top: 50%;
+    top: 50%;
 }
 
 /*
@@ -160,13 +195,35 @@ full-width {
 .thin-border {
 	border: 1px solid #999;
 }
+
+/*
+*media queries
+*/
+@media only screen and (max-width: 500px) {
+	.hide-on-small-only {
+    	display: none;
+    }
+	.page-bg {
+    	height: 60vh;
+        width: 30vw;    
+    }
+}
+@media only screen and (min-width: 501px) {
+	.hide-on-med-and-up {
+    	display: none;
+    }
+	.page-bg {
+    	height: 50vh;
+        width: 60vw;    
+    }
+}
 </style>
 
 </head>
 
 <body class="is-home">
 
-<header>
+<header id="header">
 <nav class="center">
 	<div class="nav-dots abs-left default-bg valign"></div>
 	<h3 class="spaced-2 caps">Mandy May Photograpy</h3>
@@ -194,15 +251,19 @@ full-width {
 </menu>
 </header>
 
-<main class="bg1 full-bg">
-<div>
-</div>
+<main class="full-screen">
+	<div id="load-line" class="middle load-line"></div>
+	<div class="middle page-bg bg1 full-bg hide"></div>
 </main>
 
 <footer>
 </footer>
 
 <script>
+document.getElementById("header").onload = function() {
+	var loadLine = document.getElementById("load-line");
+	loadLine.style.width = "200px";
+};
 </script>
 
 </body>
