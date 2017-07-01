@@ -77,8 +77,9 @@ nav {
 */
 .load-line {
 	height: 1px;
-    background-color: #333;
-    width: 0;
+ 	background-color: #333;
+	width: 0;
+	transition: 0.5s;
 }
 
 
@@ -260,10 +261,13 @@ h2 a:hover {
 </footer>
 
 <script>
-document.getElementById("header").onload = function() {
+//document.getElementById("header").onload = function() {
 	var loadLine = document.getElementById("load-line");
-	loadLine.style.width = "200px";
-};
+    loadLine.style.width = "0px";
+    setTimeout(function(){
+		loadLine.style.width = "200px";
+    }, 50);
+//};
 </script>
 
 </body>
