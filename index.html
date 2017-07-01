@@ -3,6 +3,8 @@
 <head>
 
 <!-- General Meta -->
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>Mandy May Photography</title>
 <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
 <meta name='description' content='Mandy may Photography description'/>
@@ -28,80 +30,172 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
 <style>
+/*
+*structure
+*/
 body {
 	padding: 0;
-    margin: 0;
-    color: #333;
+    	margin: 0;
+}
+ul {
+	list-style-type: none;
+    	padding: 0;
+    	margin: 0;
+}
+menu {
+	margin: 0;
+    	padding: 0;
+}
+nav {
+	position: fixed;
+   	top: 0;
+    	width: 100%;
+}
+.nav-dots {
+	border-radius: 50%;
+    	height: 10px;
+    	width: 10px;
+}
+.container {
+	position: relative;
+	margin: 0 auto;
+   	max-width: 700px;
+   	padding: 0 16px;
+}
+
+
+/*
+*bg
+*/
+.full-bg {
+	background-repeat: no-repeat;
+   	background-position: center;
+   	background-size: cover;
+}
+.bg1 {
+	background-image: url("images/bridal/MMS_1011.jpg");
 }
 .default-bg {
 	background-color: #333;
 }
+
+/*
+*text
+*/
+p, h1, h3 {
+	color: #333;
+    	font-family: arial;
+}
+h2 a {
+	color: #999;
+	font-family: arial;
+    	font-size: 12px;
+    	font-weight: normal;
+    	text-decoration: none;
+}
+.spaced-2 {
+	letter-spacing: 2px;
+}
+.spaced-4 {
+	letter-spacing: 4px;
+}
+.caps {
+	text-transform: uppercase;
+}
+.center {
+	text-align: center;
+}
+.align-left {
+	text-align: left;
+}
+.align-right {
+	text-align: right;
+}
+
+/*
+*positions
+*/
 .middle {
 	position: absolute;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
+    	top: 50%;
+    	left: 50%;
 }
-.period {
-    /*position: absolute;
-    left: 70%;
-    top: 55%;*/
-    display: inline-block;
-    font-size: 200px;
-	font-family: arial;
-    font-weight: bold;
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    margin-bottom: 15px;
+full-width {
+	width: 100%;
 }
-.loading-letter {
-	display: inline-block;
-	position: relative;
-    font-size: 200px;
-	font-family: arial;
-    font-weight: bold;
+.left {
+	float: left;
 }
-.myOrbit {  
-    -webkit-animation: myOrbit 1s ease-out infinite; /* Chrome, Safari 5 */
-       -moz-animation: myOrbit 1s ease-out infinite; /* Firefox 5-15 */
-         -o-animation: myOrbit 1s ease-out infinite; /* Opera 12+ */
-            animation: myOrbit 1s linear infinite; /* Chrome, Firefox 16+*/                }
-@-webkit-keyframes myOrbit {
-    from { -webkit-transform: rotate(0deg) translateX(15px) rotate(0deg); }
-    to   { -webkit-transform: rotate(360deg) translateX(15px) rotate(-360deg); }
+.right {
+	float: right;
 }
-
-@-moz-keyframes myOrbit {
-    from { -moz-transform: rotate(0deg) translateX(15px) rotate(0deg); }
-    to   { -moz-transform: rotate(360deg) translateX(15px) rotate(-360deg); }
+.abs-left {
+	position: absolute;
+    	left: 16px;
+}
+.abs-right {
+	position: absolute;
+    	right: 16px;
+}
+.left-menu {
+ 	position: fixed;
+    	left: 10%;
+}
+.right-menu {
+ 	position: fixed;
+    	right: 10%;
+}
+.valign {
+	position: absolute;
+	-webkit-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+    	top: 50%;
 }
 
-@-o-keyframes myOrbit {
-    from { -o-transform: rotate(0deg) translateX(15px) rotate(0deg); }
-    to   { -o-transform: rotate(360deg) translateX(15px) rotate(-360deg); }
+/*
+*borders
+*/
+.thin-border {
+	border: 1px solid #999;
 }
-
-@keyframes myOrbit {
-    from { transform: rotate(0deg) translateX(15px) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(15px) rotate(-360deg); }
-} 
 </style>
 
 </head>
 
-<body>
+<body class="is-home">
 
 <header>
-<nav>
+<nav class="center">
+	<div class="nav-dots abs-left default-bg valign"></div>
+	<h3 class="spaced-2 caps">Mandy May Photograpy</h3>
+    <div class="nav-dots abs-right default-bg valign"></div>
 </nav>
+<menu>
+    <div class="valign left-menu align-left">
+    	<ul>
+        	<li><h2><a href="#" class="caps spaced-2">engagement</a></h2></li>
+            <li><h2><a href="#" class="caps spaced-2">bridal</a></h2></li>
+            <li><h2><a href="#" class="caps spaced-2">wedding day</a></h2></li>
+            <li><h2><a href="#" class="caps spaced-2">maternity</a></h2></li>
+            <li><h2><a href="#" class="caps spaced-2">newborn</a></h2></li>
+        </ul>
+    </div>
+    <div class="valign right-menu align-right">
+    	<ul>
+        	<li><h2><a href="#" class="caps spaced-2">sitter session</a></h2></li>
+            <li><h2><a href="#" class="caps spaced-2">family</a></h2></li>
+            <li><h2><a href="#" class="caps spaced-2">kids</a></h2></li>
+            <li><h2><a href="#" class="caps spaced-2">seniors</a></h2></li>
+            <li><h2><a href="#" class="caps spaced-2">fashion</a></h2></li>
+        </ul>
+    </div>
+</menu>
 </header>
 
-<main>
-<div id="loading-box" class="middle">
-	<div class="loading-letter">M</div>
-    <div class="period myOrbit default-bg"></div>
+<main class="bg1 full-bg">
+<div>
 </div>
 </main>
 
