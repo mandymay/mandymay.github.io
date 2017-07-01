@@ -29,6 +29,9 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Libre+Franklin|Droid" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
+<!-- External Script Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
 <style>
 /*
 *structure
@@ -71,18 +74,42 @@ nav {
 .hide {
 	display: none; !important
 }
+.pop-up {
+	position: fixed;
+    webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    -webkit-animation: top .5s forwards;
+    		animation: top .5s forwards;
+    left: 50%;
+	background-color: #333;
+    padding: 0 24px;
+}
 
 /*
 *load transitions
 */
 .load-line {
 	height: 1px;
- 	background-color: #333;
-	width: 0;
-	transition: 0.5s;
+    background-color: #333;
+    transition: 0.7s;
+    transform-origin: center;
 }
-
-
+.load-line.short {
+	width: 0;
+}
+.load-line.long {
+	width: 80%;
+}
+.load-box {
+	height: 60%;
+    transition: 0.5s;
+}
+.load-box.short {
+	width: 0;
+}
+.load-box.long {
+	width: 80%;
+}
 /*
 *bg
 */ 
@@ -114,6 +141,9 @@ h2 a {
     text-decoration: none;
 }
 h2 a:hover {
+	color: #e1e1e1;
+}
+.white-text {
 	color: #e1e1e1;
 }
 .spaced-2 {
@@ -150,7 +180,7 @@ h2 a:hover {
 .middle {
 	position: absolute;
 	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
 }
@@ -186,8 +216,35 @@ h2 a:hover {
 .valign {
 	position: absolute;
 	-webkit-transform: translate(0, -50%);
-	transform: translate(0, -50%);
+			transform: translate(0, -50%);
     top: 50%;
+}
+.rotate-90-counterclock {
+	-webkit-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+}
+.rotate-90-clock {
+	-webkit-transform: rotate(90deg);
+			transform: rotate(90deg);
+}
+.rotate-30-counterclock {
+	-webkit-transform: rotate(-30deg);
+			transform: rotate(-30deg);
+}
+.rotate-30-clock {
+	-webkit-transform: rotate(30deg);
+			transform: rotate(30deg);
+}
+.rotate-45-counterclock {
+	-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+}
+.rotate-45-clock {
+	-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+}
+.front {
+	z-index: 1000;
 }
 
 /*
@@ -195,6 +252,18 @@ h2 a:hover {
 */
 .thin-border {
 	border: 1px solid #999;
+}
+
+/*
+*keyframes
+*/
+@-webkit-keyframes top {
+    from	{top: -100px;}
+    t0		{top: 50px;}
+}
+@keyframes top {
+    from	{top: -100px;}
+    to		{top: 50px;}
 }
 
 /*
@@ -222,7 +291,7 @@ h2 a:hover {
 
 </head>
 
-<body class="is-home">
+<body class="is-home" onload="pageLoad()">
 
 <header id="header">
 <nav class="center">
@@ -230,6 +299,17 @@ h2 a:hover {
 	<h3 class="spaced-2 caps">Mandy May Photograpy</h3>
     <div class="nav-dots abs-right default-bg valign"></div>
 </nav>
+</header>
+
+<main class="full-screen">
+    <p id="cookie-text" class="front pop-up white-text"></p>
+	<div id="load-line" class="middle load-line short"></div>
+    <div id="load-line2" class="middle load-line short"></div>
+    <div id="load-box" class="middle load-box default-bg short hide"></div>
+	<div class="middle page-bg bg1 full-bg hide"></div>
+</main>
+
+<footer>
 <menu>
     <div class="valign left-menu align-left">
     	<ul>
@@ -250,24 +330,146 @@ h2 a:hover {
         </ul>
     </div>
 </menu>
-</header>
-
-<main class="full-screen">
-	<div id="load-line" class="middle load-line"></div>
-	<div class="middle page-bg bg1 full-bg hide"></div>
-</main>
-
-<footer>
 </footer>
 
 <script>
-//document.getElementById("header").onload = function() {
-	var loadLine = document.getElementById("load-line");
-    loadLine.style.width = "0px";
+/*function checkCookies() {
+    var text = "";
+    if (navigator.cookieEnabled == true) {
+        text = "This website uses cookies to optimise the experience. By continuing your visit on the website, you consent to the use of cookies. Click this box to close.";
+    } else {
+        text = "Cookies are not enabled.";
+    }
+    document.getElementById("cookie-text").innerHTML = text;
+};*/
+
+function pageLoad() {
     setTimeout(function(){
-		loadLine.style.width = "200px";
+		stu.toggleClass("#load-line","short","long");
+        stu.toggleClass("#load-line2","short","long");
     }, 50);
-//};
+    setTimeout(function(){
+    	stu.addClass("#load-line","rotate-30-counterclock");
+        stu.addClass("#load-line2","rotate-30-clock");
+    }, 700);
+    setTimeout(function(){
+    	stu.toggleClass("#load-box","hide","block");
+        setTimeout(function(){
+        	stu.toggleClass("#load-box","short","long");
+        }, 50);
+    }, 1600);
+};
+
+// stu toggle functions
+// ========================================================
+var stu = {};
+stu.styleElement = function (element, prop, val) {
+  element.style.setProperty(prop, val);
+};
+stu.toggleShow = function (sel) {
+  var i, x = stu.getElements(sel), xl = x.length;
+  for (i = 0; i < xl; i++) {    
+    if (x[i].style.display == "none") {
+      stu.styleElement(x[i], "display", "block");
+    } else {
+      stu.styleElement(x[i], "display", "none");
+    }
+  }
+};
+stu.togglePaddingProj = function (sel) {
+  var i, x = stu.getElements(sel), l = x.length;
+  for (i = 0; i < l; i++) {    
+    if (x[i].style.padding == "0px") {
+      stu.styleElement(x[i], "padding", "48px 24px 24px");
+    } else {
+      stu.styleElement(x[i], "padding", "0px");
+    }
+  }
+};
+stu.addClass = function (sel, name) {
+  stu.addClassElements(stu.getElements(sel), name);
+};
+stu.addClassElements = function (elements, name) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {
+    stu.addClassElement(elements[i], name);
+  }
+};
+stu.addClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+};
+stu.removeClass = function (sel, name) {
+  stu.removeClassElements(stu.getElements(sel), name);
+};
+stu.removeClassElements = function (elements, name) {
+  var i, l = elements.length, arr1, arr2, j;
+  for (i = 0; i < l; i++) {
+    stu.removeClassElement(elements[i], name);
+  }
+};
+stu.removeClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+};
+stu.toggleClass = function (sel, c1, c2) {
+  stu.toggleClassElements(stu.getElements(sel), c1, c2);
+};
+stu.toggleClassElements = function (elements, c1, c2) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {    
+    stu.toggleClassElement(elements[i], c1, c2);
+  }
+};
+stu.toggleClassElement = function (element, c1, c2) {
+  var t1, t2, t1Arr, t2Arr, j, arr, allPresent;
+  t1 = (c1 || "");
+  t2 = (c2 || "");
+  t1Arr = t1.split(" ");
+  t2Arr = t2.split(" ");
+  arr = element.className.split(" ");
+  if (t2Arr.length == 0) {
+    allPresent = true;
+    for (j = 0; j < t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      stu.removeClassElement(element, t1);
+    } else {
+      stu.addClassElement(element, t1);
+    }
+  } else {
+    allPresent = true;
+    for (j = 0; j < t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      stu.removeClassElement(element, t1);
+      stu.addClassElement(element, t2);          
+    } else {
+      stu.removeClassElement(element, t2);        
+      stu.addClassElement(element, t1);
+    }
+  }
+};
+stu.getElements = function (id) {
+  if (typeof id == "object") {
+    return [id];
+  } else {
+    return document.querySelectorAll(id);
+  }
+};
 </script>
 
 </body>
