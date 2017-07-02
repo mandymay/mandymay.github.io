@@ -45,19 +45,33 @@ ul {
     padding: 0;
     margin: 0;
 }
+ul li {
+	padding: 4px 0;
+}
 menu {
+	position: fixed;
+    transition: 0.5s;
 	margin: 0;
     padding: 0;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+}
+menu.closed {
+	top: 100%;
+}
+menu.open {
+	top: 0;
 }
 nav {
 	position: fixed;
     top: 0;
     width: 100%;
 }
-.nav-dots {
-	border-radius: 50%;
-    height: 10px;
-    width: 10px;
+.nav-lines {
+    height: 1px;
+    width: 24px;
+    background-color: #222;
 }
 .container {
 	position: relative;
@@ -89,10 +103,14 @@ nav {
 *load transitions
 */
 .load-line {
+	position: relative;
+    top: 50%;
+    left: 50%;
 	height: 1px;
     background-color: #333;
     transition: 0.7s;
-    transform-origin: center;
+    -webkit-transform: translate(-50%, -50%);
+    		transform: translate(-50%, -50%);
 }
 .load-line.short {
 	width: 0;
@@ -110,6 +128,7 @@ nav {
 .load-box.long {
 	width: 80%;
 }
+
 /*
 *bg
 */ 
@@ -133,15 +152,16 @@ p, h1, h3 {
 	color: #333;
     font-family: arial;
 }
-h2 a {
+h2, h2 a {
 	color: #999;
 	font-family: arial;
     font-size: 12px;
     font-weight: normal;
     text-decoration: none;
 }
-h2 a:hover {
-	color: #e1e1e1;
+h2:hover, h2 a:hover {
+	color: #333;
+    cursor: pointer;
 }
 .white-text {
 	color: #e1e1e1;
@@ -184,6 +204,12 @@ h2 a:hover {
     top: 50%;
     left: 50%;
 }
+.top {
+	top: 0;
+}
+.bottom {
+	bottom: 0;
+}
 .full-screen {
 	height: 100vh;
     width: 100vw;
@@ -199,19 +225,19 @@ h2 a:hover {
 }
 .abs-left {
 	position: absolute;
-    left: 16px;
+    /left: 0;
 }
 .abs-right {
 	position: absolute;
-    right: 16px;
+    right: 0;
 }
 .left-menu {
  	position: fixed;
-    left: 10%;
+    left: 25%;
 }
 .right-menu {
  	position: fixed;
-    right: 10%;
+    right: 25%;
 }
 .valign {
 	position: absolute;
@@ -229,11 +255,11 @@ h2 a:hover {
 }
 .rotate-30-counterclock {
 	-webkit-transform: rotate(-30deg);
-			transform: rotate(-30deg);
+			transform: translate(-50%, -50%) rotate(-30deg);
 }
 .rotate-30-clock {
 	-webkit-transform: rotate(30deg);
-			transform: rotate(30deg);
+			transform: translate(-50%, -50%) rotate(30deg);
 }
 .rotate-45-counterclock {
 	-webkit-transform: rotate(-45deg);
@@ -295,23 +321,28 @@ h2 a:hover {
 
 <header id="header">
 <nav class="center">
-	<div class="nav-dots abs-left default-bg valign"></div>
+	<div class="nav-lines abs-left default-bg valign"></div>
 	<h3 class="spaced-2 caps">Mandy May Photograpy</h3>
-    <div class="nav-dots abs-right default-bg valign"></div>
+    <div class="nav-lines abs-right default-bg valign"></div>
 </nav>
 </header>
 
 <main class="full-screen">
     <p id="cookie-text" class="front pop-up white-text"></p>
-	<div id="load-line" class="middle load-line short"></div>
-    <div id="load-line2" class="middle load-line short"></div>
+		<div id="load-line" class="load-line short"></div>
+    	<div id="load-line2" class="load-line short"></div>
     <div id="load-box" class="middle load-box default-bg short hide"></div>
 	<div class="middle page-bg bg1 full-bg hide"></div>
 </main>
 
 <footer>
-<menu>
-    <div class="valign left-menu align-left">
+<div class="center fixed bottom front full-width">
+	<div class="nav-lines abs-left default-bg valign"></div>
+	<h2 class="spaced-2 caps" onclick="openMenu()">menu</h2>
+    <div class="nav-lines abs-right valign"></div>
+</div>
+<menu class="closed">
+    <div class="valign left-menu center">
     	<ul>
         	<li><h2><a href="#" class="caps spaced-2">engagement</a></h2></li>
             <li><h2><a href="#" class="caps spaced-2">bridal</a></h2></li>
@@ -320,7 +351,7 @@ h2 a:hover {
             <li><h2><a href="#" class="caps spaced-2">newborn</a></h2></li>
         </ul>
     </div>
-    <div class="valign right-menu align-right">
+    <div class="valign right-menu center">
     	<ul>
         	<li><h2><a href="#" class="caps spaced-2">sitter session</a></h2></li>
             <li><h2><a href="#" class="caps spaced-2">family</a></h2></li>
@@ -358,8 +389,16 @@ function pageLoad() {
         	stu.toggleClass("#load-box","short","long");
         }, 50);
     }, 1600);
+    setTimeout(function(){
+    	stu.toggleClass("#load-line","long","short");
+        stu.toggleClass("#load-line2","long","short");
+    }, 2100);
 };
 
+function openMenu() {
+	stu.toggleClass("menu","cosed","open");
+};
+    
 // stu toggle functions
 // ========================================================
 var stu = {};
