@@ -233,11 +233,17 @@ h2:hover, h2 a:hover {
 }
 .left-menu {
  	position: fixed;
+	top: 50%;
   left: 25%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 .right-menu {
  	position: fixed;
+  top: 50%;
   right: 25%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 .valign {
 	position: absolute;
@@ -342,7 +348,7 @@ h2:hover, h2 a:hover {
     <div class="nav-lines abs-right valign"></div>
 </div>
 <menu class="closed">
-    <div class="valign middle left-menu center">
+    <div class="left-menu center">
     	<ul>
         	<li><h2><a href="#" class="caps spaced-2">engagement</a></h2></li>
             <li><h2><a href="#" class="caps spaced-2">bridal</a></h2></li>
@@ -351,7 +357,7 @@ h2:hover, h2 a:hover {
             <li><h2><a href="#" class="caps spaced-2">newborn</a></h2></li>
         </ul>
     </div>
-    <div class="valign middle right-menu center">
+    <div class="right-menu center">
     	<ul>
         	<li><h2><a href="#" class="caps spaced-2">sitter session</a></h2></li>
             <li><h2><a href="#" class="caps spaced-2">family</a></h2></li>
