@@ -65,13 +65,17 @@ menu.open {
 }
 nav {
 	position: fixed;
-    top: 0;
     width: 100%;
+}
+nav, #footer {
+	transition: 0.5s;
 }
 .nav-lines {
     height: 1px;
     width: 24px;
-    background-color: #222;
+}
+.is-home .nav-lines {
+	background-color: #e1e1e1;
 }
 .container {
 	position: relative;
@@ -123,22 +127,25 @@ nav {
     -webkit-transform: translate(-50%, -50%);
     		transform: translate(-50%, -50%);
 }
-.load-line.short {
+.load-line.narrow {
 	width: 0;
 }
 .load-line.long {
 	width: 80%;
 }
-.load-box {
-	height: 60%;
+.load-box, .image-box {
     transition: 0.5s;
 }
+.load-box.tall, .image-box {
+    height: 100%;
+}
 .load-box.short {
+    height: 0;
+}
+.load-box.narrow {
 	width: 0;
 }
-.load-box.long {
-	width: 80%;
-}
+
 /*
 *bg
 */ 
@@ -159,7 +166,7 @@ nav {
 */
 p, h1, h3 {
 	color: #333;
-    font-family: arial;
+    font-family: Playfair Display;
 }
 h2, h2 a {
 	color: #999;
@@ -171,6 +178,13 @@ h2, h2 a {
 h2:hover, h2 a:hover {
 	color: #e1e1e1;
     cursor: pointer;
+}
+.page-title span {
+	transition: 0.5s;
+	opacity: 0;
+}
+.page-title span.active {
+	opacity: 1;
 }
 .white-text {
 	color: #e1e1e1;
@@ -215,8 +229,17 @@ h2:hover, h2 a:hover {
 .top {
 	top: 0;
 }
+nav.top {
+	top: 15%;
+}
 .bottom {
 	bottom: 0;
+}
+.header-out {
+	top: -100px;
+}
+.footer-out {
+	bottom: -100px;
 }
 .full-screen {
 	height: 100vh;
@@ -231,9 +254,17 @@ h2:hover, h2 a:hover {
 .right {
 	float: right;
 }
+#left-nav-line.out {
+	position: absolute;
+    left: -40px;
+}
+#right-nav-line.out {
+	position: absolute;
+    right: -40px;
+}
 .abs-left {
 	position: absolute;
-    /left: 0;
+    left: 0;
 }
 .abs-right {
 	position: absolute;
@@ -268,11 +299,11 @@ h2:hover, h2 a:hover {
 			transform: rotate(90deg);
 }
 .rotate-30-counterclock {
-	-webkit-transform: rotate(-30deg);
+	-webkit-transform: translate(-50%, -50%) rotate(-30deg);
 			transform: translate(-50%, -50%) rotate(-30deg);
 }
 .rotate-30-clock {
-	-webkit-transform: rotate(30deg);
+	-webkit-transform: translate(-50%, -50%) rotate(30deg);
 			transform: translate(-50%, -50%) rotate(30deg);
 }
 .rotate-45-counterclock {
@@ -310,19 +341,37 @@ h2:hover, h2 a:hover {
 	.hide-on-small-only {
     	display: none;
     }
-	.page-bg {
-    	height: 60vh;
-        width: 30vw;    
-    }
 }
 @media only screen and (min-width: 501px) {
 	.hide-on-med-and-up {
     	display: none;
     }
-	.page-bg {
-    	height: 50vh;
-        width: 60vw;    
-    }
+}
+@media (orientation: landscape) {
+	.load-box.long, .image-box {
+		width: 100%;
+	}
+    .rotate-30-counterclock {
+		-webkit-transform: translate(-50%, -50%) rotate(-30deg);
+				transform: translate(-50%, -50%) rotate(-30deg);
+	}
+	.rotate-30-clock {
+		-webkit-transform: translate(-50%, -50%) rotate(30deg);
+				transform: translate(-50%, -50%) rotate(30deg);
+	}
+}
+@media (orientation: portrait) {
+	.load-box.long, .image-box {
+		width: 100%;
+	}
+    .rotate-30-counterclock {
+		-webkit-transform: translate(-50%, -50%) rotate(-60deg);
+				transform: translate(-50%, -50%) rotate(-60deg);
+	}
+	.rotate-30-clock {
+		-webkit-transform: translate(-50%, -50%) rotate(60deg);
+				transform: translate(-50%, -50%) rotate(60deg);
+	}
 }
 </style>
 
@@ -330,27 +379,27 @@ h2:hover, h2 a:hover {
 
 <body class="is-home" onload="pageLoad()">
 
-<header id="header">
-<nav class="center">
-	<div class="nav-lines abs-left default-bg valign"></div>
-	<h3 class="spaced-2 caps">Mandy May Photograpy</h3>
-    <div class="nav-lines abs-right default-bg valign"></div>
+<header>
+<nav id="nav" class="center top">
+	<div id="left-nav-line" class="nav-lines out valign"></div>
+	<h3 class="spaced-2 caps white-text page-title">Mandy May Photograpy</h3>
+    <div id="right-nav-line" class="nav-lines out valign"></div>
 </nav>
 </header>
 
-<main class="full-screen">
+<main id="main" class="full-screen">
     <p id="cookie-text" class="front pop-up white-text"></p>
-		<div id="load-line" class="load-line short"></div>
-    	<div id="load-line2" class="load-line short"></div>
-    <div id="load-box" class="middle load-box default-bg short hide"></div>
-	<div class="middle page-bg bg1 full-bg hide"></div>
+		<div id="load-line" class="load-line narrow"></div>
+    	<div id="load-line2" class="load-line narrow"></div>
+    <div id="load-box" class="middle load-box default-bg narrow short hide"></div>
+	<div id="home-image1" class="middle image-box bg1 full-bg hide"></div>
 </main>
 
 <footer>
-<div class="center fixed bottom front full-width">
-	<div class="nav-lines abs-left default-bg valign"></div>
-	<h2 class="spaced-2 caps padding-16" onclick="openMenu()">menu</h2>
-    <div class="nav-lines abs-right valign"></div>
+<div id="footer" class="center fixed front full-width footer-out">
+	<div class="abs-left nav-lines valign"></div>
+	<h2 class="spaced-2 caps padding-16 white-text" onclick="openMenu()">menu</h2>
+    <div class="abs-right nav-lines valign"></div>
 </div>
 <menu class="closed">
     <div class="left-menu center">
@@ -386,8 +435,8 @@ h2:hover, h2 a:hover {
 };*/
 function pageLoad() {
     setTimeout(function(){
-		stu.toggleClass("#load-line","short","long");
-        stu.toggleClass("#load-line2","short","long");
+		stu.toggleClass("#load-line","narrow","long");
+        stu.toggleClass("#load-line2","narrow","long");
     }, 50);
     setTimeout(function(){
     	stu.addClass("#load-line","rotate-30-counterclock");
@@ -396,14 +445,40 @@ function pageLoad() {
     setTimeout(function(){
     	stu.toggleClass("#load-box","hide","block");
         setTimeout(function(){
-        	stu.toggleClass("#load-box","short","long");
+        stu.toggleClass("#load-box","tall","short");
+        stu.toggleClass("#load-box","narrow","long");
         }, 50);
     }, 1600);
     setTimeout(function(){
-    	stu.toggleClass("#load-line","long","short");
-      stu.toggleClass("#load-line2","long","short");
+        stu.removeClass("#load-line","rotate-30-counterclock");
+        stu.removeClass("#load-line2","rotate-30-clock");
+    	stu.toggleClass("#load-line","long","narrow");
+        stu.toggleClass("#load-line2","long","narrow");
     }, 2100);
+    setTimeout(function(){
+    	stu.toggleClass("#home-image1","hide","block");
+        setTimeout(function(){
+        	stu.toggleClass("#load-box","tall","short");
+            stu.toggleClass("#load-box","narrow","long");
+            setTimeout(function(){
+                stu.toggleClass("#load-box","tall","short");
+                setTimeout(function(){
+                	animateMe();
+                    setTimeout(function(){
+                    	stu.toggleClass("#left-nav-line","out","abs-left");
+                        stu.toggleClass("#right-nav-line","out","abs-right");
+                    }, 800);
+                }, 300);
+                //stu.toggleClass("#nav","header-out","top");
+            	stu.toggleClass("#footer","footer-out","bottom");
+            }, 800);
+        }, 500);
+    }, 2600);
+    
 };
+
+// openMenu function
+// ========================================================
 function openMenu() {
 	stu.toggleClass("menu","closed","open");
 };
@@ -517,6 +592,77 @@ stu.getElements = function (id) {
   } else {
     return document.querySelectorAll(id);
   }
+};
+</script>
+
+<script>
+( function( $ ) {
+    /*
+     * span-letters.js
+     * 
+     * Example usage: jQuery('.selector').spanLetters();
+     */
+     
+    $.fn.spanLetters = function() {
+        // Loop through each element on which this function has been called
+        this.each( function() {   
+            
+            // Scope the variables
+            var words, i, text;
+          
+            // Make an array with each letter of the string as a value
+            words = $( this ).text().split( '' );
+            // Loop through the letters and wrap each one in a span
+            for ( i = 0; i in words; i++ ) {
+                words[i] = '<span class="sl' + ( i + 1 ) + ' span-letter">' + words[i] + '</span>'
+            };
+            // Join our array of span-wrapped letters back into a string
+            text = words.join( '' );
+            // Replace the original string with the new string
+            $( this ).html( text );
+        })
+    }
+}( jQuery ));
+// Call spanLetters on our target
+$( ".page-title" ).spanLetters();
+targetPageTitle = $( ".page-title span" ); // Select our spans
+duration = 5000; // Set duration of the effect here
+speed = 90; // Set animation speed through the letters here
+// Add the animation class to the letter, then remove it later
+function animateLetter( value ) {
+  if ( turnedOn ) {
+    
+    setTimeout( function() {
+      $( value ).addClass( "active" );
+    }, 0 );
+    setTimeout( function() {
+      //stopAnimateLetter( value );  
+    }, duration );
+      
+  }
+  
+};
+// Remove the animation class from the letter
+function stopAnimateLetter( value ) {
+  $( value ).removeClass( "active" );
+};
+// Trigger function
+function startEverything() {
+  
+  // Loop through our collection of spans
+  targetPageTitle.each( function( index, value ) {
+    // Sequentially delay the firing of the animation through the letters
+    timer = setTimeout( function() {
+      animateLetter( value );
+    }, speed*index );
+  });     
+}
+   
+function animateMe() { 
+        
+  turnedOn = true;
+  startEverything();
+        
 };
 </script>
 
