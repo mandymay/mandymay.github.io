@@ -96,6 +96,12 @@ nav, #footer {
 .hide {
 	display: none; !important
 }
+.hidden {
+	visibility: hidden;
+}
+.visible {
+	visibility: visible;
+}
 .pop-up {
 	position: fixed;
     webkit-transform: translate(-50%,0);
@@ -426,7 +432,7 @@ nav.top {
 		<div id="load-line" class="load-line narrow"></div>
     	<div id="load-line2" class="load-line narrow"></div>
     <div id="load-box" class="middle load-box default-bg narrow short hide"></div>
-	<div id="home-image1" class="middle image-box bg1 full-bg hide"></div>
+	<div id="home-image1" class="middle image-box bg1 full-bg hidden"></div>
 </main>
 
 <footer>
@@ -463,15 +469,6 @@ nav.top {
 </footer>
 
 <script>
-/*function checkCookies() {
-    var text = "";
-    if (navigator.cookieEnabled == true) {
-        text = "This website uses cookies to optimise the experience. By continuing your visit on the website, you consent to the use of cookies. Click this box to close.";
-    } else {
-        text = "Cookies are not enabled.";
-    }
-    document.getElementById("cookie-text").innerHTML = text;
-};*/
 function pageLoad() {
     setTimeout(function(){
 		stu.toggleClass("#load-line","narrow","long");
@@ -497,9 +494,9 @@ function pageLoad() {
         stu.removeClass("#load-line2","rotate-30-clock");
     	//stu.toggleClass("#load-line","long","narrow");
         //stu.toggleClass("#load-line2","long","narrow");
-    }, 2600);
+    }, 2300);
     setTimeout(function(){
-    	stu.toggleClass("#home-image1","hide","block");
+    	stu.toggleClass("#home-image1","hidden","visible");
         setTimeout(function(){
         	stu.toggleClass("#load-box","tall","short");
             stu.toggleClass("#load-box","narrow","long");
@@ -511,7 +508,7 @@ function pageLoad() {
                     	stu.toggleClass("#left-nav-line","out","abs-left");
                         stu.toggleClass("#right-nav-line","out","abs-right");
                     }, 800);
-                }, 300);
+                }, 500);
                 //stu.toggleClass("#nav","header-out","top");
             	stu.toggleClass("#footer","footer-out","bottom");
             }, 800);
