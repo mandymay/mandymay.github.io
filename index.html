@@ -497,22 +497,22 @@ function pageLoad() {
     }, 2300);
     setTimeout(function(){
     	stu.toggleClass("#home-image1","hidden","visible");
+      setTimeout(function(){
+     	  stu.toggleClass("#load-box","tall","short");
+        stu.toggleClass("#load-box","narrow","long");
         setTimeout(function(){
-        	stu.toggleClass("#load-box","tall","short");
-            stu.toggleClass("#load-box","narrow","long");
+          stu.toggleClass("#load-box","tall","short");
+					//stu.toggleClass("#nav","header-out","top");
+          stu.toggleClass("#footer","footer-out","bottom");
+          setTimeout(function(){
+           	animateMe();
             setTimeout(function(){
-                stu.toggleClass("#load-box","tall","short");
-                setTimeout(function(){
-                	animateMe();
-                    setTimeout(function(){
-                    	stu.toggleClass("#left-nav-line","out","abs-left");
-                        stu.toggleClass("#right-nav-line","out","abs-right");
-                    }, 800);
-                }, 500);
-                //stu.toggleClass("#nav","header-out","top");
-            	stu.toggleClass("#footer","footer-out","bottom");
+              stu.toggleClass("#left-nav-line","out","abs-left");
+              stu.toggleClass("#right-nav-line","out","abs-right");
             }, 800);
+          }, 500);
         }, 500);
+      }, 500);
     }, 3000);
     
 };
