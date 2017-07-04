@@ -214,7 +214,10 @@ p, h1, h3 {
 	color: #333;
     font-family: Playfair Display;
 }
-h2, h2 a {
+h1 {
+  margin-top: 50px;
+}
+h2, h2 a, a {
 	color: #999;
 	font-family: arial;
     font-size: 12px;
@@ -222,7 +225,7 @@ h2, h2 a {
     text-decoration: none;
 }
 h2:hover, h2 a:hover {
-	color: #147014;
+	color: #222;
     cursor: pointer;
 }
 .page-title span {
@@ -830,60 +833,60 @@ nav.top {
 	<div class="relative full-screen">
 	  <div id="home-image1" class="middle image-box bg1 full-bg hidden"></div>
 		<a href='#portfolios' class="absolute bottommiddle center">
-			<h2 class="caps spaced-4 white-text">enter site</h2>
-      <svg style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+          <h2 class="caps spaced-4 white-text" style="text-decoration:none;">enter site</h2>
+          <svg style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
 	  </a>
 	</div>
 	<div id="portfolios" class="row">
 		<h1 class="col s12 caps center spaced-2">portfolios</h1>
 		<div class="col s12 m6 l4">
 			<div class="portfolio full-bg bg-portfolio1">
-				<h2 class="caps spaced-4 middle white-text">engagement</h2>
+				<h2 class="caps spaced-4 middle white-text center">engagement</h2>
 			</div>
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="portfolio full-bg bg-portfolio2">
-				<h2 class="caps spaced-4 middle white-text">bridal</h2>
+				<h2 class="caps spaced-4 middle white-text center">bridal</h2>
 			</div>
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="portfolio full-bg bg-portfolio3">
-				<h2 class="caps spaced-4 middle white-text">wedding day</h2>
+				<h2 class="caps spaced-4 middle white-text center">wedding day</h2>
 			</div>
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="portfolio full-bg bg-portfolio4">
-				<h2 class="caps spaced-4 middle white-text">maternity</h2>
+				<h2 class="caps spaced-4 middle white-text center">maternity</h2>
 			</div>
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="portfolio full-bg bg-portfolio5">
-				<h2 class="caps spaced-4 middle white-text">newborn</h2>
+				<h2 class="caps spaced-4 middle white-text center">newborn</h2>
 			</div>
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="portfolio full-bg bg-portfolio6">
-				<h2 class="caps spaced-4 middle white-text">sitter sessions</h2>
+				<h2 class="caps spaced-4 middle white-text center">sitter sessions</h2>
 			</div>
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="portfolio full-bg bg-portfolio7">
-				<h2 class="caps spaced-4 middle white-text">kids</h2>
+				<h2 class="caps spaced-4 middle white-text center">kids</h2>
 			</div>
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="portfolio full-bg bg-portfolio8">
-				<h2 class="caps spaced-4 middle white-text">family</h2>
+				<h2 class="caps spaced-4 middle white-text center">family</h2>
 			</div>
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="portfolio full-bg bg-portfolio9">
-				<h2 class="caps spaced-4 middle white-text">seniors</h2>
+				<h2 class="caps spaced-4 middle white-text center">seniors</h2>
 			</div>
 		</div>
 		<div class="col s12 m6 l4">
 			<div class="portfolio full-bg bg-portfolio10">
-				<h2 class="caps spaced-4 middle white-text">fashion</h2>
+				<h2 class="caps spaced-4 middle white-text center">fashion</h2>
 			</div>
 		</div>
 	</div>
@@ -950,13 +953,13 @@ function pageLoad() {
         //stu.toggleClass("#load-line2","long","narrow");
     }, 2300);
     setTimeout(function(){
-    	stu.toggleClass("#home-image1","hidden","visible");
+      stu.toggleClass("#home-image1","hidden","visible");
       setTimeout(function(){
-     	  stu.toggleClass("#load-box","tall","short");
+     	stu.toggleClass("#load-box","tall","short");
         stu.toggleClass("#load-box","narrow","long");
         setTimeout(function(){
           stu.toggleClass("#load-box","tall","short");
-					//stu.toggleClass("#nav","header-out","top");
+		  //stu.toggleClass("#nav","header-out","top");
           stu.toggleClass("#footer","footer-out","bottom");
           setTimeout(function(){
            	animateMe();
@@ -1197,6 +1200,53 @@ function animateMe() {
         
 };
 </script>
+
+    <script>
+      // Hide Header on on scroll down
+/*      var didScroll;
+      var lastScrollTop = 0;
+      var delta = 5;
+      var navbarHeight = $('nav').outerHeight();
+      $(window).scroll(function(event){
+        didScroll = true;
+      });
+      setInterval(function() {
+        if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+        }
+      }, 250);*/
+      /*
+      function hasScrolled() {
+        var st = $(this).scrollTop();
+        // Make sure they scroll more than delta
+        if(Math.abs(lastScrollTop - st) <= delta)
+          return;
+        // If they scrolled down and are past the navbar, add class .nav-up.
+        // This is necessary so you never see what is "behind" the navbar.
+        if (st > lastScrollTop && st > navbarHeight){
+          // Scroll Down
+          $('nav').removeClass('headerouter-down').addClass('headerouter-up');
+        } else {
+          // Scroll Up
+          if(st + $(window).height() < $(document).height()) {
+            $('nav').removeClass('headerouter-up').addClass('headerouter-down');
+          }
+        }
+        lastScrollTop = st;
+      }*/
+      function hasScrolled() {
+        var st = $(this).scrollTop();
+        // Make sure they scroll more than delta
+        if(st > 0)
+          document.getElementById("nav").style.top = "0";
+        } else {
+          document.getElementById("nav").style.top = "15%";
+        }
+      }
+//        lastScrollTop = st;
+//    }
+    </script>
 
 </body>
 </html>
