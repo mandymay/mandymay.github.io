@@ -87,7 +87,7 @@ nav, #footer {
 }
 .container {
 	position: relative;
-	margin: 0 auto;
+	margin: 10px auto;
 	width: 90%;
   max-width: 700px;
   padding: 0 16px;
@@ -817,12 +817,14 @@ nav.top {
 	<div id="load-line" class="load-line narrow"></div>
   <div id="load-line2" class="load-line narrow"></div>
   <div id="load-box" class="middle load-box default-bg narrow short hide"></div>
-	<div id="home-image1" class="middle image-box bg1 full-bg hidden">
-		<div class="absolute bottom center">
-			<a href='#portfolios'>
-        <svg style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
-      </a>
-		</div>
+	<div class="relative full-screen">
+	  <div id="home-image1" class="middle image-box bg1 full-bg hidden">
+		  <div class="absolute bottom container">
+			  <a href='#portfolios'>
+          <svg style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </a>
+		  </div>
+	  </div>
 	</div>
 	<div id="portfolios" class="row">
 		<div class="col s12 m6 l2 offset-l1 portfolio container full-bg bg-portfolio1"></div>
