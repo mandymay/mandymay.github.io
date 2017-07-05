@@ -136,6 +136,10 @@ nav, #footer {
 .padding-4 {
 	padding: 4px 0;
 }
+.enter {
+	-webkit-animation: enter .5s infinite;
+  animation: enter .5s infinite;
+}
 /*
 *load transitions
 */
@@ -804,6 +808,16 @@ nav.top {
     from	{top: -100px;}
     to		{top: 50px;}
 }
+@-webkit-keyframes enter {
+	0%		{margin-top: -10px; opacity: 0;}
+	50%		{opacity: 1;}
+	100%	{margin-top: 10px; opacity: 0;}
+}
+@keyframes enter {
+	0%		{margin-top: -10px; opacity: 0;}
+	50%		{opacity: 1;}
+	100%	{margin-top: 10px; opacity: 0;}
+}
 /*
 *media queries
 */
@@ -862,8 +876,7 @@ nav.top {
 	<div class="relative full-screen">
 	  <div id="home-image1" class="middle image-box bg1 full-bg hidden"></div>
 		<a href='#portfolios' class="absolute bottommiddle center">
-          <h2 class="caps spaced-4 white-text" style="text-decoration:none;">enter site</h2>
-          <svg style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+          <svg class="enter" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
 	  </a>
 	</div>
 	<div id="portfolios" class="row">
