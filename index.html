@@ -1251,7 +1251,7 @@ function animateMe() {
       function hasScrolled() {
         var st = $(this).scrollTop();
         // Make sure they scroll more than delta
-        if(st > 0)
+        if(st > 0) {
           document.getElementById("nav").style.top = "0";
         } else {
           document.getElementById("nav").style.top = "15%";
