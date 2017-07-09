@@ -90,8 +90,8 @@ nav, #footer {
 	height: 200px;
 	margin: 8px;
 	box-sizing: border-box;
-	padding: 16px;
 	position: relative;
+    padding: 0;
 }
 .portfolio:hover {
 	box-shadow: 0 0 16px #555;
@@ -223,6 +223,7 @@ nav, #footer {
 .bg-overlay {
 	height: 100%;
     width: 100%;
+    box-sizing: border-box;
 	position: relative;
 	background-color: rgba(51,51,51,0.2);
 	trasition: 0.3s;
@@ -776,20 +777,21 @@ nav.top {
 /*
 *buttons 
 */
-.btn1 {
+.btn-solid {
 	display: inline-block;
-	color: #e1e1e1;
+	color: #145814;
     letter-spacing: 2px;
     text-transform: uppercase;
-	border: 1px solid #145814;
+	border: 1px solid #e1e1e1;
     border-radius: 100px;
-    background-color: #145814;
+    background-color: transparent;
     padding: 8px 24px;
-    margin: 0 auto;
+    margin: 8px auto;
 }
-.btn1:hover {
-	background-color: #e1e1e1;
-    border-color: #e1e1e1;
+.btn-solid:hover {
+	background-color: #145814;
+    color: #e1e1e1;
+    border-color: #145814;
 }
 .btn-hollow {
 	display: inline-block;
@@ -800,7 +802,7 @@ nav.top {
     border-radius: 100px;
     background-color: transparent;
     padding: 8px 24px;
-    margin: 0 auto;
+    margin: 8px auto;
 }
 .btn-hollow:hover {
 	background-color: #145814;
@@ -873,16 +875,21 @@ nav.top {
 
 <body class="is-home" onload="pageLoad()" onscroll="hasScrolled()">
 
+<div id="load-screen" class="fixed full-screen block">
+  <div id="load-line" class="load-line narrow"></div>
+  <div id="load-line2" class="load-line narrow"></div>
+  <div id="load-box" class="middle load-box default-bg narrow short hide"></div>
+</div>
+
+<div id="page-loaded" class="hidden">
+
 <header>
 <nav id="nav" class="center top">
-	<h3 id="site-title" class="spaced-2 caps white-text page-title middle">Mandy May Photograpy</h3>
+  <h3 id="site-title" class="spaced-2 caps white-text page-title middle">Mandy May Photograpy</h3>
 </nav>
 </header>
 
 <main id="main" class="full-screen">
-  <div id="load-line" class="load-line narrow"></div>
-  <div id="load-line2" class="load-line narrow"></div>
-  <div id="load-box" class="middle load-box default-bg narrow short hide"></div>
   <div class="relative full-screen">
 	<div id="home-image1" class="middle image-box bg1 full-bg hidden"></div>
     <a href='#portfolios' class="absolute bottommiddle center">
@@ -918,6 +925,7 @@ nav.top {
 	</div>
 	<div class="col s12 m6 l4">
 	  <div class="portfolio full-bg bg-portfolio6">
+        <div class="bg-overlay"></div>
 		<h2 class="caps spaced-4 bottomright align-right white-text front">seniors &amp; fashion</h2>
 	  </div>
 	</div>
@@ -927,8 +935,10 @@ nav.top {
     <div class="middle">
       <h1 class="caps spaced-2 center white-text">Hi, I'm Mandy!</h1>
       <p class="center white-text">I would love to take your pictures. Go ahead and hang around my site for a while, check out my work, learn a little more about me and what a session with me is like, and when you're ready feel free to contact me anytime.</p>
-      <a href="#" target="_blank"><div class="btn1">book now</div></a>
-      <a href="#"><div class="btn-hollow">learn more</div></a>
+      <div style="margin: 0 auto;">
+        <a href="#" target="_blank" class="btn-solid hide-on-small-only">book now</a>
+        <a href="#" class="btn-hollow">learn more</a>
+      </div>
     </div>
   </div>
 </main>
@@ -936,6 +946,8 @@ nav.top {
 <footer>
 
 </footer>
+
+</div>
 
 <script>
 function pageLoad() {
@@ -971,14 +983,15 @@ function pageLoad() {
         stu.toggleClass("#load-box","narrow","long");
         setTimeout(function(){
           stu.toggleClass("#load-box","tall","short");
-		  //stu.toggleClass("#nav","header-out","top");
+		  stu.toggleClass("#page-loaded","hidden","visible");
           stu.toggleClass("#footer","footer-out","bottom");
           setTimeout(function(){
            	animateMe();
-            setTimeout(function(){
+            stu.toggleClass("#load-screen","block","hide");
+            /*setTimeout(function(){
               stu.toggleClass("#left-nav-line","out","abs-left");
               stu.toggleClass("#right-nav-line","out","abs-right");
-            }, 800);
+            }, 800);*/
           }, 500);
         }, 500);
       }, 500);
@@ -1249,19 +1262,18 @@ function animateMe() {
       }*/
       function hasScrolled() {
         var st = $(this).scrollTop();
-        // Make sure they scroll more than delta
         if(st > 200) {
           document.getElementById("nav").style.top = "0";
-	  	    document.getElementById("nav").style.backgroundColor = "#fff";
-		      document.getElementById("nav").style.boxShadow = "0 0 15px rgba(51,51,51,0.8)";
-		      document.getElementById("site-title").style.color = "#222";
-		      document.getElementById("site-title").style.left = "175px";
+	  	  document.getElementById("nav").style.backgroundColor = "#fff";
+		  document.getElementById("nav").style.boxShadow = "0 0 15px rgba(51,51,51,0.8)";
+		  document.getElementById("site-title").style.color = "#222";
+		  document.getElementById("site-title").style.left = "175px";
         } else {
           document.getElementById("nav").style.top = "15%";
-		      document.getElementById("nav").style.backgroundColor = "transparent";
-		      document.getElementById("nav").style.boxShadow = "none";
-		      document.getElementById("site-title").style.color = "#e1e1e1";
-		      document.getElementById("site-title").style.left = "50%";
+		  document.getElementById("nav").style.backgroundColor = "transparent";
+		  document.getElementById("nav").style.boxShadow = "none";
+		  document.getElementById("site-title").style.color = "#e1e1e1";
+		  document.getElementById("site-title").style.left = "50%";
         }
       }
 //        lastScrollTop = st;
