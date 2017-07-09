@@ -51,6 +51,12 @@ ul {
 ul li {
 	padding: 4px 0;
 }
+footer ul li a {
+  font-size: 10px;
+}
+footer ul li a:hover {
+  color: #145814;
+}
 menu {
 	position: fixed;
     transition: 0.5s;
@@ -69,10 +75,9 @@ menu.open {
 nav {
 	position: fixed;
     width: 100%;
-	padding: 0 24px;
 	z-index: 2000;
 }
-nav, #footer {
+nav {
 	transition: 0.5s;
 }
 #site-title {
@@ -128,6 +133,9 @@ nav, #footer {
     left: 50%;
 	background-color: #333;
     padding: 0 24px;
+}
+.padding-32 {
+	padding: 32px 0;
 }
 .padding-24 {
 	padding: 24px 0;
@@ -259,7 +267,7 @@ h2, h2 a, a {
     font-weight: normal;
     text-decoration: none;
 }
-h2:hover, h2 a:hover {
+h2 a:hover {
 	color: #222;
     cursor: pointer;
 }
@@ -878,91 +886,120 @@ nav.top {
 
 <div id="page-loaded" class="hidden">
 
-<header>
-<nav id="nav" class="center top">
-  <h3 id="site-title" class="spaced-2 caps white-text page-title middle">Mandy May Photograpy</h3>
-</nav>
-</header>
+  <header>
+    <nav id="nav" class="center top">
+      <h3 id="site-title" class="spaced-2 caps white-text page-title">Mandy May Photograpy</h3>
+    </nav>
+  </header>
 
-<main id="main" class="full-screen">
-  <div class="relative full-screen">
-	<div id="home-image1" class="middle image-box bg1 full-bg hidden"></div>
-    <a href='#portfolios' class="absolute bottommiddle center">
-      <svg class="enter" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
-	</a>
-  </div> 
+  <main id="main">
+    <div class="relative full-screen">
+	  <div id="home-image1" class="image-box bg1 full-bg hidden"></div>
+      <a href='#portfolios' class="absolute bottommiddle center">
+        <svg class="enter" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+      </a>
+    </div> 
   
-  <div id="portfolios" class="row">
-    <h1 class="col s12 caps center spaced-2">portfolios</h1>
-	<div class="col s12 m6 l4">
-	  <div class="portfolio full-bg bg-portfolio1">
-		<h2 class="caps spaced-4 bottomright align-right white-text front">engagements</h2>
+    <div id="portfolios" class="row">
+      <h1 class="col s12 caps center spaced-2">portfolios</h1>
+	  <div class="col s12 m6 l4">
+	    <div class="portfolio full-bg bg-portfolio1">
+		  <h2 class="caps spaced-4 bottomright align-right white-text front">engagements</h2>
+	    </div>
 	  </div>
-	</div>
-	<div class="col s12 m6 l4">
-	  <div class="portfolio full-bg bg-portfolio2">
-		<h2 class="caps spaced-4 bottomright align-right white-text front">bridals &amp; weddings</h2>
+	  <div class="col s12 m6 l4">
+	    <div class="portfolio full-bg bg-portfolio2">
+	  	  <h2 class="caps spaced-4 bottomright align-right white-text front">bridals &amp; weddings</h2>
+	    </div>
 	  </div>
-	</div>
-	<div class="col s12 m6 l4">
-	  <div class="portfolio full-bg bg-portfolio3">
-		<h2 class="caps spaced-4 bottomright align-right white-text front">newborn</h2>
+	  <div class="col s12 m6 l4">
+	    <div class="portfolio full-bg bg-portfolio3">
+	      <h2 class="caps spaced-4 bottomright align-right white-text front">newborn</h2>
+	    </div>
 	  </div>
-	</div>
-	<div class="col s12 m6 l4">
-	  <div class="portfolio full-bg bg-portfolio4">
-		<h2 class="caps spaced-4 bottomright align-right white-text front">sitter sessions</h2>
+	  <div class="col s12 m6 l4">
+	    <div class="portfolio full-bg bg-portfolio4">
+		  <h2 class="caps spaced-4 bottomright align-right white-text front">sitter sessions</h2>
+	    </div>
 	  </div>
-	</div>
-	<div class="col s12 m6 l4">
-	  <div class="portfolio full-bg bg-portfolio5">
-		<h2 class="caps spaced-4 bottomright align-right white-text front">family</h2>
+	  <div class="col s12 m6 l4">
+	    <div class="portfolio full-bg bg-portfolio5">
+		  <h2 class="caps spaced-4 bottomright align-right white-text front">family</h2>
+	    </div>
 	  </div>
-	</div>
-	<div class="col s12 m6 l4">
-	  <div class="portfolio full-bg bg-portfolio6">
-        <div class="bg-overlay"></div>
-		<h2 class="caps spaced-4 bottomright align-right white-text front">seniors &amp; fashion</h2>
+	  <div class="col s12 m6 l4">
+	    <div class="portfolio full-bg bg-portfolio6">
+          <div class="bg-overlay"></div>
+		  <h2 class="caps spaced-4 bottomright align-right white-text front">seniors &amp; fashion</h2>
+	    </div>
 	  </div>
-	</div>
-  </div>
-  
-  <div id="videos" class="row default-bg">
-    <h1 class="col s12 caps center spaced-2 white-text">videos</h1>
-	<div class="col s12 m6 front">
-	  <div class="portfolio full-bg bg-portfolio1">
-		<h2 class="caps spaced-4 bottomright align-right white-text front">engagements</h2>
-	  </div>
-	</div>
-	<div class="col s12 m6">
-	  <div class="portfolio full-bg bg-portfolio2">
-		<h2 class="caps spaced-4 bottomright align-right white-text front">weddings</h2>
-	  </div>
-	</div>
-  </div>
-  
-  <div id="book-me" class="full-bg relative bg-fixed" style="height: 80vh; width: 100%; background-image: url('https://instagram.fsnc1-1.fna.fbcdn.net/t51.2885-15/e35/18947856_787621304740826_8583152611006349312_n.jpg');">
-    <div class="overlay"></div>
-    <div class="middle">
-      <h1 class="caps spaced-2 center white-text">Hi, I'm Mandy!</h1>
-      <p class="center white-text">I would love to take your pictures. Go ahead and hang around my site for a while, check out my work, learn a little more about me and what a session with me is like, and when you're ready feel free to contact me anytime.</p>
-      <a href="#" class="btn-solid">learn more</a>
     </div>
-  </div>
-</main>
+  
+    <div id="videos" class="row default-bg">
+      <h1 class="col s12 caps center spaced-2 white-text">videos</h1>
+	  <div class="col s12 m6 front">
+	    <div class="portfolio full-bg bg-portfolio1">
+		  <h2 class="caps spaced-4 bottomright align-right white-text front">engagements</h2>
+	    </div>
+	  </div>
+	  <div class="col s12 m6">
+	    <div class="portfolio full-bg bg-portfolio2">
+		  <h2 class="caps spaced-4 bottomright align-right white-text front">weddings</h2>
+	    </div>
+	  </div>
+    </div>
+  
+    <div id="book-me" class="full-bg relative bg-fixed" style="margin-top: -24px; height: 100vh; width: 100%; background-image: url('https://instagram.fsnc1-1.fna.fbcdn.net/t51.2885-15/e35/18947856_787621304740826_8583152611006349312_n.jpg');">
+      <div class="overlay"></div>
+      <div class="container middle">
+        <h1 class="caps spaced-2 white-text">Hi, I'm Mandy!</h1>
+        <p class="white-text">I would love to take your pictures. Go ahead and hang around my site for a while, check out my work, learn a little more about me and what a session with me is like, and when you're ready feel free to contact me anytime.</p>
+        <a href="#" class="btn-solid">learn more</a>
+      </div>
+    </div>
+  </main>
 
-<footer>
-<a href='http://www.designerstu.com' target='_blank' class="center">
-      <p style='color: #222; line-height: 10px;'> Built by  
+  <footer class="relative">
+    <div class="padding-32"><div>
+    <div class="row">
+      <div class="col s12 m6">
+        <h2 class="spaced-2 caps center">book a session</h2>
+        <hr/>
+        <div class="row">
+          <div class="col s6">
+            <ul>
+              <li class="center"><a href="#" class="caps">engagements</a></li>
+              <li class="center"><a href="#" class="caps">bridals</a></li>
+              <li class="center"><a href="#" class="caps">weddings</a></li>
+              <li class="center"><a href="#" class="caps">maternity</a></li>
+            </ul>
+          </div>
+          <div class="col s6">
+            <ul>
+              <li class="center"><a href="#" class="caps">newborns</a></li>
+              <li class="center"><a href="#" class="caps">sitters</a></li>
+              <li class="center"><a href="#" class="caps">family</a></li>
+              <li class="center"><a href="#" class="caps">seniors</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <h2 class="spaced-2 caps center">expectations</h2>
+        <hr/>
+        <p class="center" style="color: #999;">This would be a short paragraph breifly explaining 1) what the customer can expect from you and 2) what you expect of your customers. Keep this very generic, for all sessions. Maybe say something about "no printed t-shirts", "refund policy", general things like that.</p>
+      </div>
+    </div>
+    <a href='http://www.designerstu.com' target='_blank' class="center">
+      <p style='color: #222; line-height: 10px;'>Built by
         <span style='-webkit-transform: translate(0,30%); -ms-transform: translate(0,30%); transform: translate(0,30%); display: inline-block; height: 25px; width: 25px;'>
-            <svg viewBox='0,0,100,100'>
-              <path d='M60 10 L35 10 L75 50 L35 90 L20 75' fill='transparent' stroke='#222' stroke-width='3'/>
-            </svg>
-         
-      </span>
+          <svg viewBox='0,0,100,100'>
+            <path d='M60 10 L35 10 L75 50 L35 90 L20 75' fill='transparent' stroke='#222' stroke-width='4'/>
+          </svg>
+        </span>
       </p>
- </a>
-</footer>
+    </a>
+  </footer>
 
 </div>
 
@@ -990,8 +1027,6 @@ function pageLoad() {
     setTimeout(function(){
         stu.removeClass("#load-line","rotate-30-counterclock");
         stu.removeClass("#load-line2","rotate-30-clock");
-    	//stu.toggleClass("#load-line","long","narrow");
-        //stu.toggleClass("#load-line2","long","narrow");
     }, 2300);
     setTimeout(function(){
       stu.toggleClass("#home-image1","hidden","visible");
@@ -1001,14 +1036,9 @@ function pageLoad() {
         setTimeout(function(){
           stu.toggleClass("#load-box","tall","short");
 		  stu.toggleClass("#page-loaded","hidden","visible");
-          stu.toggleClass("#footer","footer-out","bottom");
           setTimeout(function(){
            	animateMe();
             stu.toggleClass("#load-screen","block","hide");
-            /*setTimeout(function(){
-              stu.toggleClass("#left-nav-line","out","abs-left");
-              stu.toggleClass("#right-nav-line","out","abs-right");
-            }, 800);*/
           }, 500);
         }, 500);
       }, 500);
@@ -1017,9 +1047,9 @@ function pageLoad() {
 };
 // openMenu function
 // ========================================================
-function openMenu() {
-	stu.toggleClass("menu","closed","open");
-};
+//function openMenu() {
+//	stu.toggleClass("menu","closed","open");
+//};
     
 // stu toggle functions
 // ========================================================
@@ -1244,43 +1274,9 @@ function animateMe() {
 </script>
 
     <script>
-      // Hide Header on on scroll down
-/*      var didScroll;
-      var lastScrollTop = 0;
-      var delta = 5;
-      var navbarHeight = $('nav').outerHeight();
-      $(window).scroll(function(event){
-        didScroll = true;
-      });
-      setInterval(function() {
-        if (didScroll) {
-          hasScrolled();
-          didScroll = false;
-        }
-      }, 250);*/
-      /*
       function hasScrolled() {
         var st = $(this).scrollTop();
-        // Make sure they scroll more than delta
-        if(Math.abs(lastScrollTop - st) <= delta)
-          return;
-        // If they scrolled down and are past the navbar, add class .nav-up.
-        // This is necessary so you never see what is "behind" the navbar.
-        if (st > lastScrollTop && st > navbarHeight){
-          // Scroll Down
-          $('nav').removeClass('headerouter-down').addClass('headerouter-up');
-        } else {
-          // Scroll Up
-          if(st + $(window).height() < $(document).height()) {
-            $('nav').removeClass('headerouter-up').addClass('headerouter-down');
-          }
-        }
-       
-        lastScrollTop = st;
-      }*/
-      function hasScrolled() {
-        var st = $(this).scrollTop();
-        if(st > 200) {
+        if(st > 100) {
           document.getElementById("nav").style.top = "0";
 	  	  document.getElementById("nav").style.backgroundColor = "#fff";
 		  document.getElementById("nav").style.boxShadow = "0 0 15px rgba(51,51,51,0.8)";
@@ -1294,8 +1290,26 @@ function animateMe() {
 		  document.getElementById("site-title").style.left = "50%";
         }
       }
-//        lastScrollTop = st;
-//    }
+       </script>
+       <script>
+      
+      function isTouchSupported() {
+		
+        var msTouchEnabled = window.navigator.msMaxTouchPoints;
+        var generalTouchEnabled = &quot;ontouchstart&quot; in document.createElement(&quot;div&quot;);
+ 
+        if (msTouchEnabled || generalTouchEnabled) {
+          return true;
+			 
+        }
+		
+        return false;
+      }
+
+      if(isTouchSupported()){
+
+        document.getElementsByClassName('bg-fixed')[0].style.backgroundAttachment = 'scroll';
+      }
     </script>
 
 </body>
