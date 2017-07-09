@@ -441,9 +441,9 @@ nav.top {
   padding:.75rem;
   min-height:1px
 }
-.row .col[class*="push-"],.row .col[class*="pull-"] {
+/*.row .col[class*="push-"],.row .col[class*="pull-"] {
   position:relative
-}
+}*/
 .row .col.s1 {
   width:8.3333333333%;
   margin-left:auto;
@@ -778,23 +778,18 @@ nav.top {
 */
 .btn-solid {
 	display: inline-block;
-	color: #145814;
+	color: #222;
     letter-spacing: 2px;
     text-transform: uppercase;
 	border: 1px solid #e1e1e1;
     border-radius: 100px;
-    background-color: transparent;
+    background-color: #e1e1e1;
     padding: 8px 24px;
     margin: 8px auto;
-}
-.btn-solid:hover {
-	background-color: #145814;
-    color: #e1e1e1;
-    border-color: #145814;
 }
 .btn-hollow {
 	display: inline-block;
-	color: #145814;
+	color: #e1e1e1;
     letter-spacing: 2px;
     text-transform: uppercase;
 	border: 1px solid #e1e1e1;
@@ -803,10 +798,11 @@ nav.top {
     padding: 8px 24px;
     margin: 8px auto;
 }
-.btn-hollow:hover {
+.btn-solid:hover, .btn-hollow:hover {
 	background-color: #145814;
     color: #e1e1e1;
     border-color: #145814;
+    box-shadow: 0 0 16px #555;
 }
 /*
 *keyframes
@@ -895,6 +891,7 @@ nav.top {
       <svg class="enter" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
 	</a>
   </div> 
+  
   <div id="portfolios" class="row">
     <h1 class="col s12 caps center spaced-2">portfolios</h1>
 	<div class="col s12 m6 l4">
@@ -929,21 +926,42 @@ nav.top {
 	  </div>
 	</div>
   </div>
+  
+  <div id="videos" class="row default-bg">
+    <h1 class="col s12 caps center spaced-2 white-text">videos</h1>
+	<div class="col s12 m6 front">
+	  <div class="portfolio full-bg bg-portfolio1">
+		<h2 class="caps spaced-4 bottomright align-right white-text front">engagements</h2>
+	  </div>
+	</div>
+	<div class="col s12 m6">
+	  <div class="portfolio full-bg bg-portfolio2">
+		<h2 class="caps spaced-4 bottomright align-right white-text front">weddings</h2>
+	  </div>
+	</div>
+  </div>
+  
   <div id="book-me" class="full-bg relative bg-fixed" style="height: 80vh; width: 100%; background-image: url('https://instagram.fsnc1-1.fna.fbcdn.net/t51.2885-15/e35/18947856_787621304740826_8583152611006349312_n.jpg');">
     <div class="overlay"></div>
     <div class="middle">
       <h1 class="caps spaced-2 center white-text">Hi, I'm Mandy!</h1>
       <p class="center white-text">I would love to take your pictures. Go ahead and hang around my site for a while, check out my work, learn a little more about me and what a session with me is like, and when you're ready feel free to contact me anytime.</p>
-      <div style="margin: 0 auto;">
-        <a href="#" target="_blank" class="btn-solid hide-on-small-only">book now</a>
-        <a href="#" class="btn-hollow">learn more</a>
-      </div>
+      <a href="#" class="btn-solid">learn more</a>
     </div>
   </div>
 </main>
 
 <footer>
-
+<a href='http://www.designerstu.com' target='_blank' class="center">
+      <p style='color: #222; line-height: 10px;'> Built by  
+        <span style='-webkit-transform: translate(0,30%); -ms-transform: translate(0,30%); transform: translate(0,30%); display: inline-block; height: 25px; width: 25px;'>
+            <svg viewBox='0,0,100,100'>
+              <path d='M60 10 L35 10 L75 50 L35 90 L20 75' fill='transparent' stroke='#222' stroke-width='3'/>
+            </svg>
+         
+      </span>
+      </p>
+ </a>
 </footer>
 
 </div>
@@ -1257,6 +1275,7 @@ function animateMe() {
             $('nav').removeClass('headerouter-up').addClass('headerouter-down');
           }
         }
+       
         lastScrollTop = st;
       }*/
       function hasScrolled() {
