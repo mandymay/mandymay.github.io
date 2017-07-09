@@ -141,6 +141,9 @@ nav, #footer {
 .padding-4 {
 	padding: 4px 0;
 }
+.padding-0 {
+	padding: 0; !important
+}
 .enter {
 	-webkit-animation: enter 1.5s reverse infinite;
   animation: enter 1.5s reverse infinite;
@@ -209,7 +212,17 @@ nav, #footer {
 	.bg-portfolio6 {
 	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/thumbnails/MMS_6090%20-%20Thumbnail.jpg?raw=true');
 }
+.bg-fixed {
+  background-attachment: fixed;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(51,51,51,0.4);
+}
 .bg-overlay {
+	height: 100%;
+    width: 100%;
 	position: relative;
 	background-color: rgba(51,51,51,0.2);
 	trasition: 0.3s;
@@ -764,12 +777,14 @@ nav.top {
 *buttons 
 */
 .btn {
+	display: inline-block;
 	color: #e1e1e1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 	border: 1px solid #145814;
     border-radius: 100px;
     background-color: #145814;
     padding: 8px 24px;
-    max-width: 100px;
     margin: 0 auto;
 }
 .btn:hover {
@@ -777,12 +792,14 @@ nav.top {
     border-color: #e1e1e1;
 }
 .btn-hollow {
+	display: inline-block;
 	color: #145814;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 	border: 1px solid #e1e1e1;
     border-radius: 100px;
-    background-color: #e1e1e1;
+    background-color: transparent;
     padding: 8px 24px;
-    max-width: 100px;
     margin: 0 auto;
 }
 .btn-hollow:hover {
@@ -863,81 +880,61 @@ nav.top {
 </header>
 
 <main id="main" class="full-screen">
-	<div id="load-line" class="load-line narrow"></div>
+  <div id="load-line" class="load-line narrow"></div>
   <div id="load-line2" class="load-line narrow"></div>
   <div id="load-box" class="middle load-box default-bg narrow short hide"></div>
-	<div class="relative full-screen">
-	  <div id="home-image1" class="middle image-box bg1 full-bg hidden"></div>
-		<a href='#portfolios' class="absolute bottommiddle center">
-          <svg class="enter" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
-	  </a>
+  <div class="relative full-screen">
+	<div id="home-image1" class="middle image-box bg1 full-bg hidden"></div>
+    <a href='#portfolios' class="absolute bottommiddle center">
+      <svg class="enter" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+	</a>
+  </div> 
+  <div id="portfolios" class="row">
+    <h1 class="col s12 caps center spaced-2">portfolios</h1>
+	<div class="col s12 m6 l4">
+	  <div class="portfolio full-bg bg-portfolio1">
+		<h2 class="caps spaced-4 bottomright align-right white-text front">engagements</h2>
+	  </div>
 	</div>
-	<div id="portfolios" class="row">
-		<h1 class="col s12 caps center spaced-2">portfolios</h1>
-		<div class="col s12 m6 l4">
-			<div class="portfolio full-bg bg-portfolio1">
-				<h2 class="caps spaced-4 bottomright align-right white-text front">engagements</h2>
-			</div>
-		</div>
-		<div class="col s12 m6 l4">
-			<div class="portfolio full-bg bg-portfolio2">
-				<h2 class="caps spaced-4 bottomright align-right white-text front">bridals & weddings</h2>
-			</div>
-		</div>
-		<div class="col s12 m6 l4">
-			<div class="portfolio full-bg bg-portfolio3">
-					<h2 class="caps spaced-4 bottomright align-right white-text front">newborn</h2>
-			</div>
-		</div>
-		<div class="col s12 m6 l4">
-			<div class="portfolio full-bg bg-portfolio4">
-					<h2 class="caps spaced-4 bottomright align-right white-text front">sitter sessions</h2>
-			</div>
-		</div>
-		<div class="col s12 m6 l4">
-			<div class="portfolio full-bg bg-portfolio5">
-					<h2 class="caps spaced-4 bottomright align-right white-text front">family</h2>
-			</div>
-		</div>
-		<div class="col s12 m6 l4">
-			<div class="portfolio full-bg bg-portfolio6">
-					<h2 class="caps spaced-4 bottomright align-right white-text front">seniors & fashion</h2>
-			</div>
-		</div>
+	<div class="col s12 m6 l4">
+	  <div class="portfolio full-bg bg-portfolio2">
+		<h2 class="caps spaced-4 bottomright align-right white-text front">bridals & weddings</h2>
+	  </div>
 	</div>
+	<div class="col s12 m6 l4">
+	  <div class="portfolio full-bg bg-portfolio3">
+		<h2 class="caps spaced-4 bottomright align-right white-text front">newborn</h2>
+	  </div>
+	</div>
+	<div class="col s12 m6 l4">
+	  <div class="portfolio full-bg bg-portfolio4">
+		<h2 class="caps spaced-4 bottomright align-right white-text front">sitter sessions</h2>
+	  </div>
+	</div>
+	<div class="col s12 m6 l4">
+	  <div class="portfolio full-bg bg-portfolio5">
+		<h2 class="caps spaced-4 bottomright align-right white-text front">family</h2>
+	  </div>
+	</div>
+	<div class="col s12 m6 l4">
+	  <div class="portfolio full-bg bg-portfolio6">
+		<h2 class="caps spaced-4 bottomright align-right white-text front">seniors & fashion</h2>
+	  </div>
+	</div>
+  </div>
+  <div id="book-me" class="full-bg relative bg-fixed" style="height: 80vh; width: 100%; background-image: url('https://instagram.fsnc1-1.fna.fbcdn.net/t51.2885-15/e35/18947856_787621304740826_8583152611006349312_n.jpg');">
+    <div class="overlay"></div>
+    <div class="middle">
+      <h1 class="caps spaced-2 center white-text">Hi, I'm Mandy!</h1>
+      <p class="center white-text">I would love to take you pictures. Please take a look at my portfolios and videos, learn a little more about me and what a session with me is like, and feel free to contact me anytime.</p>
+      <a href="#" target="_blank"><div class="btn">book now</div></a>
+      <a href="#"><div class="btn-hollow">learn more</div></a>
+    </div>
+  </div>
 </main>
 
 <footer>
-<!--<div id="footer" class="center fixed front full-width footer-out">
-	<div id="left-nav-line" class="out nav-lines valign"></div>
-        <h2 class="spaced-2 caps padding-16" onclick="openMenu()">menu</h2>
-    <div id="right-nav-line" class="out nav-lines valign"></div>
-</div>
-<menu class="closed">
-	<h3 class="caps spaced-2 center white-text">Portfolios</h3>
-    <div class="left-menu center">
-    	<ul>
-        	<li><h2><a href="#" class="caps spaced-2">engagement</a></h2></li>
-            <li><h2><a href="#" class="caps spaced-2">bridal</a></h2></li>
-            <li><h2><a href="#" class="caps spaced-2">wedding day</a></h2></li>
-            <li><h2><a href="#" class="caps spaced-2">maternity</a></h2></li>
-            <li><h2><a href="#" class="caps spaced-2">newborn</a></h2></li>
-            <li><br/></li>
-            <li><h2><a href="#" class="caps spaced-2 btn-hollow">about</a></h2></li>
-        </ul>
-    </div>
-    <div class="right-menu center">
-    	<ul>
-        	<li><h2><a href="#" class="caps spaced-2">sitter session</a></h2></li>
-            <li><h2><a href="#" class="caps spaced-2">family</a></h2></li>
-            <li><h2><a href="#" class="caps spaced-2">kids</a></h2></li>
-            <li><h2><a href="#" class="caps spaced-2">seniors</a></h2></li>
-            <li><h2><a href="#" class="caps spaced-2">fashion</a></h2></li>
-            <li><br/></li>
-            <li><h2><a href="#" class="caps spaced-2 btn-hollow">contact</a></h2></li>
-        </ul>
-    </div>
-</menu>-->
+
 </footer>
 
 <script>
@@ -1255,16 +1252,16 @@ function animateMe() {
         // Make sure they scroll more than delta
         if(st > 200) {
           document.getElementById("nav").style.top = "0";
-					document.getElementById("nav").style.backgroundColor = "#fff";
-					document.getElementById("nav").style.boxShadow = "0 0 15px rgba(51,51,51,0.8)";
-					document.getElementById("site-title").style.color = "#222";
-					document.getElementById("site-title").style.left = "175px";
+	  	    document.getElementById("nav").style.backgroundColor = "#fff";
+		      document.getElementById("nav").style.boxShadow = "0 0 15px rgba(51,51,51,0.8)";
+		      document.getElementById("site-title").style.color = "#222";
+		      document.getElementById("site-title").style.left = "175px";
         } else {
           document.getElementById("nav").style.top = "15%";
-					document.getElementById("nav").style.backgroundColor = "transparent";
-					document.getElementById("nav").style.boxShadow = "none";
-					document.getElementById("site-title").style.color = "#e1e1e1";
-					document.getElementById("site-title").style.left = "50%";
+		      document.getElementById("nav").style.backgroundColor = "transparent";
+		      document.getElementById("nav").style.boxShadow = "none";
+		      document.getElementById("site-title").style.color = "#e1e1e1";
+		      document.getElementById("site-title").style.left = "50%";
         }
       }
 //        lastScrollTop = st;
