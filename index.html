@@ -562,6 +562,9 @@ nav.top {
   margin-left:100%
 }
 @media only screen and (min-width: 601px) {
+.hide-on-med-and-up {
+  display: none;
+}
   .row .col.m1 {
   width:8.3333333333%;
   margin-left:auto;
@@ -672,6 +675,9 @@ nav.top {
 }
 }
 @media only screen and (min-width: 993px) {
+	.hide-on-large-only {
+		display: none;
+	}
   .row .col.l1 {
   width:8.3333333333%;
   margin-left:auto;
@@ -841,8 +847,8 @@ nav.top {
     	display: none;
     }
 }
-@media only screen and (min-width: 601px) {
-	.hide-on-med-and-up {
+@media only screen and (max-width: 992px) {
+	.hide-on-med-and-down {
     	display: none;
     }
 }
@@ -899,6 +905,23 @@ nav.top {
         <svg class="enter" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
       </a>
     </div> 
+		
+		<h3 class="caps spaced-2 center">Follow me <a href="https://www.instagram.com/mandy_may" target="_blank">@mandy_may</a></h3>
+		<div class="hide-on-med-and-up">
+			<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/2d9763258f7d566294323cc4736847f9.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+	  </div>
+		<div class="hide-on-small-only">
+			<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/9b46cf01a89856dfa83a6fc58a0e2b33.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+		</div>
+		
+		<div id="book-me" class="full-bg relative bg-fixed" style="margin-top: -24px; height: 100vh; width: 100%; background-image: url('https://instagram.fsnc1-1.fna.fbcdn.net/t51.2885-15/e35/18947856_787621304740826_8583152611006349312_n.jpg');">
+      <div class="overlay"></div>
+      <div class="container middle">
+        <h1 class="caps spaced-2 white-text">Hi, I'm Mandy!</h1>
+        <p class="white-text">I would love to take your pictures. Go ahead and hang around my site for a while, check out my work, learn a little more about me and what a session with me is like, and when you're ready feel free to contact me anytime.</p>
+        <a href="#" class="btn-solid">learn more</a>
+      </div>
+    </div>
   
     <div id="portfolios" class="row">
       <h1 class="col s12 caps center spaced-2">portfolios</h1>
@@ -947,15 +970,6 @@ nav.top {
 		  <h2 class="caps spaced-4 bottomright align-right white-text front">weddings</h2>
 	    </div>
 	  </div>
-    </div>
-  
-    <div id="book-me" class="full-bg relative bg-fixed" style="margin-top: -24px; height: 100vh; width: 100%; background-image: url('https://instagram.fsnc1-1.fna.fbcdn.net/t51.2885-15/e35/18947856_787621304740826_8583152611006349312_n.jpg');">
-      <div class="overlay"></div>
-      <div class="container middle">
-        <h1 class="caps spaced-2 white-text">Hi, I'm Mandy!</h1>
-        <p class="white-text">I would love to take your pictures. Go ahead and hang around my site for a while, check out my work, learn a little more about me and what a session with me is like, and when you're ready feel free to contact me anytime.</p>
-        <a href="#" class="btn-solid">learn more</a>
-      </div>
     </div>
   </main>
 
@@ -1296,18 +1310,15 @@ function animateMe() {
       function isTouchSupported() {
 		
         var msTouchEnabled = window.navigator.msMaxTouchPoints;
-        var generalTouchEnabled = 'ontouchstart' in document.createElement('div';
+        var generalTouchEnabled = 'ontouchstart' in document.createElement('div');
  
         if (msTouchEnabled || generalTouchEnabled) {
-          return true;
-			 
-        }
-		
-        return false;
+          return true; 
+	} 
+	return false;
       }
-
+	       
       if(isTouchSupported()){
-
         document.getElementsByClassName('bg-fixed')[0].style.backgroundAttachment = 'scroll';
       }
     </script>
