@@ -1,0 +1,1818 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- General Meta -->
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Mandy May Photography</title>
+<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
+<meta name='description' content='Mandy may Photography description'/>
+<link rel="icon" href="https://github.com/stucoston/CostonMission/blob/master/2017_FebNewsletter/IMG_5221.png?raw=true"/>
+
+<!-- Facebook open graph meta -->
+<meta property='og:title' content='Mandy May Photography'/>
+<meta property='og:type' content='website'/>
+<meta property='og:image' content='https://github.com/stucoston/stucoston.github.io/blob/master/Screenshot%202017-05-07%20at%204.17.35%20PM%20-%20Edited.png?raw=true'/>
+<meta property='og:description' content='Mandy May Photography description'/>
+<meta property='og:url' content='http://www.mandymayphotography.com'/>
+<meta property='fb:admins' content='100004682442320'/>
+
+<!-- Twitter cards meta -->
+<meta name='twitter:card' content='summary'/>
+<meta name='twitter:url' content='http://www.mandymayphotography.com'/>
+<meta name='twitter:image' content='https://github.com/stucoston/stucoston.github.io/blob/master/Screenshot%202017-05-07%20at%204.17.35%20PM%20-%20Edited.png?raw=true'/>
+<meta name='twitter:title' content='Mandy May Photography'/>
+<meta name='twitter:description' content='Mandy May Photography description'/>
+
+<!-- Preload Items -->
+<link rel="prefetch" href="https://github.com/mandymay/mandymay.github.io/blob/master/images/bridal/MMS_1011.jpg?raw=true"/>
+
+<!-- External Stylesheets -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900|Libre+Franklin|Droid" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+<!-- External Script Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+<style>
+/*
+*structure
+*/
+body {
+	padding: 0;
+    margin: 0;
+}
+ul {
+	list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ul li {
+	padding: 4px 0;
+}
+footer ul li a {
+  color: #222;
+  font-size: 10px;
+}
+footer ul li a:hover {
+  color: #145814;
+}
+menu {
+	position: fixed;
+    transition: 0.5s;
+	margin: 0;
+    padding: 0;
+    background-color: #333;
+    height: 100%;
+    width: 100%;
+}
+menu.closed {
+	top: 100%;
+}
+menu.open {
+	top: 0;
+}
+nav {
+	position: fixed;
+    width: 100%;
+	z-index: 2000;
+}
+nav {
+	transition: 0.5s;
+}
+#site-title {
+	transition: 0.3s;
+}
+.nav-lines-left {
+	position: absolute;
+  background-color: #e1e1e1;
+	transition: 0.5s;
+  height: 1px;
+  width: 24px;
+  left: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+.nav-lines-right {
+	position: absolute;
+  background-color: #e1e1e1;
+	transition: 0.5s;
+  height: 1px;
+  width: 24px;
+  right: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+#slide-show {
+  z-index: 10000;
+}
+.video {
+  height: 300px;
+  width: 600px;
+  margin: 8px auto;
+  position: relative;
+  transition: 1s;
+}
+.video-selector {
+  height: 60px;
+  width: 120px;
+  margin: 8px;
+}
+svg:hover {
+	cursor:pointer;
+}
+.hover-opacity {
+  opacity: 0.6;
+}
+.hover-opacity-off,.hover-opacity:hover {
+  opacity: 1;
+}
+.portfolio {
+	flex: 1 1 300px;
+	height: 250px;
+	margin: 8px;
+	position: relative;
+	-webkit-filter: none;
+	filter: none;
+	transition: 0.3s;
+}
+.portfolio:hover {
+	box-shadow: 0 0 17px -1px #111;
+	-webkit-filter: saturation(0%);
+	filter: saturation(0%);
+}
+footer .portfolio {
+	height: auto;
+}
+footer .portfolio:hover {
+	box-shadow: none;
+}
+.container {
+	position: relative;
+	margin: 0 auto;
+	width: 90%;
+  max-width: 700px;
+}
+.block {
+	display: block; !important
+}
+.inline {
+	display: inline-block; !important
+}
+.hide {
+	display: none; !important
+}
+.hidden {
+	visibility: hidden;
+}
+.visible {
+	visibility: visible;
+}
+.pop-up {
+	position: fixed;
+    webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    -webkit-animation: top .5s forwards;
+    		animation: top .5s forwards;
+    left: 50%;
+	background-color: #333;
+    padding: 0 24px;
+}
+.padding-around-16 {
+  padding: 16px;
+}
+.padding-32 {
+	padding: 32px 0;
+}
+.padding-24 {
+	padding: 24px 0;
+}
+.padding-16 {
+	padding: 16px 0;
+}
+.padding-8 {
+	padding: 8px 0;
+}
+.padding-4 {
+	padding: 4px 0;
+}
+.padding-0 {
+	padding: 0; !important
+}
+.enter {
+	-webkit-animation: enter 1.5s reverse infinite;
+  animation: enter 1.5s reverse infinite;
+}
+/*
+*load transitions
+*/
+.load-line {
+	position: relative;
+    top: 50%;
+    left: 50%;
+	height: 1px;
+    background-color: #333;
+    transition: 0.7s;
+    -webkit-transform: translate(-50%, -50%);
+    		transform: translate(-50%, -50%);
+}
+.load-line.narrow {
+	width: 0;
+}
+.load-line.long {
+	width: 80%;
+}
+.load-box, .image-box {
+    transition: 0.5s;
+}
+.load-box.tall, .image-box {
+    height: 100%;
+}
+.load-box.short {
+    height: 0;
+}
+.load-box.narrow {
+	width: 0;
+}
+/*
+*bg
+*/ 
+.full-bg {
+	background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.bg1 {
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/family/MMS_5783.jpg?raw=true');
+}
+.default-bg {
+	background-color: #333;
+}
+	.bg-portfolio1 {
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_6693.jpg?raw=true');
+}
+	.bg-portfolio2 {
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_3461.jpg?raw=true');
+}
+	.bg-portfolio3 {
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_6078.jpg?raw=true');
+}
+	.bg-portfolio4 {
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_5505.jpg?raw=true');
+}
+	.bg-portfolio5 {
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/maternity/MMS_8964.jpg?raw=true');
+}
+	.bg-portfolio6 {
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_6090.jpg?raw=true');
+}
+	
+/*engagement slides*/
+.bg-e1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_6693.jpg?raw=true');
+}
+.bg-e2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_0324.jpg?raw=true');
+}
+.bg-e3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_2055.jpg?raw=true');
+}
+.bg-e4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_6194.jpg?raw=true');
+}
+.bg-e5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_6125.jpg?raw=true');
+}
+/*bridals and wedding slides*/
+.bg-w1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_3461.jpg?raw=true');
+}
+.bg-w2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_2742.jpg?raw=true');
+}
+.bg-w3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_2920.jpg?raw=true');
+}
+.bg-w4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_6138.jpg?raw=true');
+}
+.bg-w5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/bridal/MMS_1011.jpg?raw=true');
+}
+/*newborn slides*/
+.bg-n1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_6078.jpg?raw=true');
+}
+.bg-n2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_2831.jpg?raw=true');
+}
+.bg-n3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_3049.jpg?raw=true');
+}
+.bg-n4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_4256.jpg?raw=true');
+}
+.bg-n5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_6802.jpg?raw=true');
+}
+/*sitters slides*/
+.bg-s1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_5505.jpg?raw=true');
+}
+.bg-s2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_1339.jpg?raw=true');
+}
+.bg-s3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_2555.jpg?raw=true');
+}
+.bg-s4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_4629.jpg?raw=true');
+}
+.bg-s5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_0277.jpg?raw=true');
+}
+/*family slides*/
+.bg-f1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/maternity/MMS_8964.jpg?raw=true');
+}
+.bg-f2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/kids/MMS_0996.jpg?raw=true');
+}
+.bg-f3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/kids/MMS_6395.jpg?raw=true');
+}
+.bg-f4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/kids/MMS_6232.jpg?raw=true');
+}
+.bg-f5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/kids/MMS_2643.jpg?raw=true');
+}
+/*seniors and fashion slides*/
+.bg-fa1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_6090.jpg?raw=true');
+}
+.bg-fa2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_2055.jpg?raw=true');
+}
+.bg-fa3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_2055.jpg?raw=true');
+}
+.bg-fa4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_2055.jpg?raw=true');
+}
+.bg-fa5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_2055.jpg?raw=true');
+}
+.bg-fixed {
+  background-attachment: fixed;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+.bg-overlay {
+	height: 100%;
+        width: 100%;
+        box-sizing: border-box;
+	position: relative;
+	background-color: rgba(0,0,0,0.3);
+	transition: 0.3s;
+}
+.bg-overlay:hover {
+	background-color: rgba(0,0,0,0);
+	cursor: pointer;
+}
+.bg-hoverable {
+	-webkit-filter: saturation(0%);
+	filter: saturation(0%);
+}
+.bg-hoverable:hover {
+	-webkit-filter: saturation(100%);
+	filter: saturation(100%);
+}
+	
+/*
+*text
+*/
+p, h1, h3 {
+	color: #333;
+    font-family: Playfair Display;
+}
+h1 {
+  margin-top: 50px;
+}
+h2, h2 a, a {
+	color: #999;
+	font-family: arial;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+}
+footer h2, footer h2 a, footer a {
+	color: #222;
+}
+h2 a:hover {
+	color: #222;
+    cursor: pointer;
+}
+.page-title span {
+	transition: 0.5s;
+	opacity: 0;
+}
+.page-title span.active {
+	opacity: 1;
+}
+.white-text {
+	color: #e1e1e1;
+}
+.spaced-2 {
+	letter-spacing: 2px;
+}
+.spaced-4 {
+	letter-spacing: 4px;
+}
+.caps {
+	text-transform: uppercase;
+}
+.center {
+	text-align: center;
+}
+.align-left {
+	text-align: left;
+}
+.align-right {
+	text-align: right;
+}
+.thin {
+	font-weight: 100;
+}
+/*
+*positions
+*/
+.relative {
+	position: relative;
+}
+.fixed {
+	position: fixed; !important
+}
+.absolute {
+	position: absolute;
+}
+.middle {
+	position: absolute;
+	-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+.top {
+	top: 0;
+}
+nav.top {
+	top: 15%;
+}
+.bottom {
+	bottom: 0;
+}
+.bottommiddle {
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.bottomright {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+.topleft {
+  position: absolute;
+	top: 0;
+	left: 0;
+}
+.topright {
+  position: fixed;
+	top: 0;
+	right: 0;
+}
+#portfolios {
+	bottom 20px; !important
+}
+.header-out {
+	top: -100px;
+}
+.footer-out {
+	bottom: -100px;
+}
+.full-screen {
+	height: 100vh;
+    width: 100%;
+}
+.full-width {
+	width: 100%;
+}
+.fixed-left {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+.fixed-right {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+#left-nav-line.out {
+	position: absolute;
+    left: -40px;
+}
+#right-nav-line.out {
+	position: absolute;
+    right: -40px;
+}
+.abs-left {
+	position: absolute;
+    left: 0;
+}
+.abs-right {
+	position: absolute;
+    right: 0;
+}
+.left-menu {
+ 	position: absolute;
+	top: 50%;
+  left: 25%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.right-menu {
+ 	position: absolute;
+  top: 50%;
+  right: 25%;
+	-webkit-transform: translate(50%, -50%);
+	transform: translate(50%, -50%);
+}
+.valign {
+	position: absolute;
+	-webkit-transform: translate(0, -50%);
+			transform: translate(0, -50%);
+    top: 50%;
+}
+.rotate-90-counterclock {
+	-webkit-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+}
+.rotate-90-clock {
+	-webkit-transform: rotate(90deg);
+			transform: rotate(90deg);
+}
+.rotate-30-counterclock {
+	-webkit-transform: translate(-50%, -50%) rotate(-30deg);
+			transform: translate(-50%, -50%) rotate(-30deg);
+}
+.rotate-30-clock {
+	-webkit-transform: translate(-50%, -50%) rotate(30deg);
+			transform: translate(-50%, -50%) rotate(30deg);
+}
+.rotate-45-counterclock {
+	-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+}
+.rotate-45-clock {
+	-webkit-transform: rotate(45deg);
+			transform: rotate(45deg);
+}
+.front {
+	z-index: 1000;
+}
+.eSlide,.wSlide,.nSlide,.sSlide,.fSlide,.faSlide {
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+#engagement-slides, #wedding-slides, #newborn-slides, #sitter-slides, #family-slides, #fashion-slides {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  height: 100%;
+  width: 100%;
+}
+/*
+*borders
+*/
+.thin-border {
+	border: 1px solid #999;
+}
+/* grid
+/* =============================== */
+.flex-container {
+	display: flex;
+	position: relative;
+	width: 100%;
+	max-width: 1000px;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	padding: 0 8px 48px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+.flex-container-space-around {
+  display: flex;
+	width: 100%;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+/*
+*buttons 
+*/
+.btn-solid {
+	display: inline-block;
+	color: #222;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+	border: 1px solid #e1e1e1;
+    border-radius: 100px;
+    background-color: #e1e1e1;
+    padding: 8px 24px;
+    margin: 8px auto;
+}
+.btn-hollow {
+	display: inline-block;
+	color: #e1e1e1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+	border: 1px solid #e1e1e1;
+    border-radius: 100px;
+    background-color: transparent;
+    padding: 8px 24px;
+    margin: 8px auto;
+}
+.btn-solid:hover, .btn-hollow:hover {
+	background-color: #e1e1e1;
+    color: #222;
+    border-color: #e1e1e1;
+    box-shadow: 0 0 17px -1px #111;
+}
+/*
+*keyframes
+*/
+@-webkit-keyframes top {
+    from	{top: -100px;}
+    t0		{top: 50px;}
+}
+@keyframes top {
+    from	{top: -100px;}
+    to		{top: 50px;}
+}
+@-webkit-keyframes enter {
+	0%		{margin-top: -10px; opacity: 0;}
+	50%		{opacity: 1;}
+	100%	{margin-top: 10px; opacity: 0;}
+}
+@keyframes enter {
+	0%		{margin-top: -20px; opacity: 0;}
+	50%		{opacity: 1;}
+	100%	{margin-top: 10px; opacity: 0;}
+}
+/*
+*media queries
+*/
+@media only screen and (max-width: 600px) {
+	.hide-on-small-only {
+    	display: none;
+    }
+}
+@media only screen and (min-width: 601px) {
+	.hide-on-med-and-up {
+    	display: none;
+    }
+}
+@media only screen and (max-width: 992px) {
+	.hide-on-med-and-down {
+    	display: none;
+    }
+}
+@media only screen and (min-width: 992px) {
+	.hide-on-large-only {
+    	display: none;
+    }
+}
+@media (orientation: landscape) {
+	.load-box.long, .image-box {
+		width: 100%;
+	}
+    .rotate-30-counterclock {
+		-webkit-transform: translate(-50%, -50%) rotate(-30deg);
+				transform: translate(-50%, -50%) rotate(-30deg);
+	}
+	.rotate-30-clock {
+		-webkit-transform: translate(-50%, -50%) rotate(30deg);
+				transform: translate(-50%, -50%) rotate(30deg);
+	}
+}
+@media (orientation: portrait) {
+	.load-box.long, .image-box {
+		width: 100%;
+	}
+    .rotate-30-counterclock {
+		-webkit-transform: translate(-50%, -50%) rotate(-60deg);
+				transform: translate(-50%, -50%) rotate(-60deg);
+	}
+	.rotate-30-clock {
+		-webkit-transform: translate(-50%, -50%) rotate(60deg);
+				transform: translate(-50%, -50%) rotate(60deg);
+	}
+}
+</style>
+
+</head>
+
+<body class="is-home" onload="pageLoad()" onscroll="hasScrolled()">
+
+<div id="load-screen" class="fixed full-screen block">
+  <div id="load-line" class="load-line narrow"></div>
+  <div id="load-line2" class="load-line narrow"></div>
+  <div id="load-box" class="middle load-box default-bg narrow short hide"></div>
+</div>
+
+<div id="page-loaded" class="hidden">
+
+  <header>
+    <nav id="nav" class="center top">
+      <h3 id="site-title" class="spaced-2 caps black-text page-title">Mandy May Photograpy</h3>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="flex-container">
+      <img src='https://scontent-sjc2-1.cdninstagram.com/t51.2885-15/e35/17126763_424755194543155_3174435737500123136_n.jpg' height="200px" width="200px">
+    </div>
+    
+    <div class="flex-container">
+      <p>Hi,
+<p>
+Thanks for clicking your way over here to learn about me!
+</p>
+<p>
+I absolutely love photography and it has done so much for me as a person. I have a love for the art and I know that I will be working to grow in my craft always.
+</p>
+<p>
+I have many dreams and goals for my photography, but on the journey to reaching them I love that it gives me a creative outlet to express myself while also providing a service to others by giving them special memories to cherish forever. This means more to me than any goal I could ever set for myself.
+</p>
+<p>
+I'm from a small town in Central Arkansas. I love what I do, but above all I love my family. I spend what little free time I have building furniture or making projects with my husband. Many of the props that I use in my shoots are dsigned and made by me so you can always know that nobody else is capturing the same thing. I'm tyically a homebody, but I love to explore and get a major case of wanderlust if I go to long without traveling. 
+</p>
+<p>
+My life as a wife and sister to four siblings has truly taken me to new heights in my never ending journey as a photographer. There is nothing I would love more to capture the true essence and special bond between a family, provide a special keepsake for an individual, or stop time and keep your kids young forever because children grow wings and fly before we are all really to ready to let them go. I hope you give me the privilege of documenting that which is most special to you. Your own family, your story, you.
+</p>
+<p>
+I hope to hear from you soon!
+</p>
+    </div>
+  </main>
+
+  <footer class="relative">
+    <div class="padding-32"></div>
+			
+    <div class="flex-container-space-around">
+			
+			<div class="portfolio">
+        <h2 class="spaced-2 caps center black-text">book a session</h2>
+        <hr/>
+        <div class="flex-container-space-around black-text">
+          <ul>
+            <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Engagement%20Booking%20Inquiry" class="caps">engagements</a></li>
+            <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Wedding%20Booking%20Inquiry" class="caps">weddings</a></li>
+	    <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Newborn%20Booking%20Inquiry" class="caps">newborns</a></li>
+          </ul>
+          <ul>
+            <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Sitters%20Booking%20Inquiry" class="caps">sitters</a></li>
+            <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Family%20Booking%20Inquiry" class="caps">family</a></li>
+            <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Senior%20Booking%20Inquiry" class="caps">seniors</a></li>
+          </ul>
+        </div>
+      </div>
+			
+			<div class="portfolio">
+        <h2 class="spaced-2 caps center black-text">expectations</h2>
+        <hr/>
+        <p class="center black-text">This would be a short paragraph breifly explaining 1) what the customer can expect from you and 2) what you expect of your customers. Keep this very generic, for all sessions. Maybe say something about "no printed t-shirts", "refund policy", general things like that.</p>
+      </div>
+			
+    </div>
+			
+    <a href='http://www.designerstu.com' target='_blank' class="center">
+      <p style='color: #222; line-height: 10px;'>Built by
+        <span style='-webkit-transform: translate(0,30%); -ms-transform: translate(0,30%); transform: translate(0,30%); display: inline-block; height: 25px; width: 25px;'>
+          <svg viewBox='0,0,100,100'>
+            <path d='M60 10 L35 10 L75 50 L35 90 L20 75' fill='transparent' stroke='#222' stroke-width='4'/>
+          </svg>
+        </span>
+      </p>
+    </a>
+  </footer>
+
+</div>
+
+<script>
+function pageLoad() {
+    setTimeout(function(){
+		  stu.toggleClass("#load-line","narrow","long");
+      stu.toggleClass("#load-line2","narrow","long");
+    }, 50);
+    setTimeout(function(){
+    	stu.addClass("#load-line","rotate-30-counterclock");
+      stu.addClass("#load-line2","rotate-30-clock");
+    }, 700);
+    setTimeout(function(){
+    	stu.toggleClass("#load-line","narrow","long");
+      stu.toggleClass("#load-line2","narrow","long");
+    }, 1600);
+    setTimeout(function(){
+    	stu.toggleClass("#load-box","hide","block");
+      setTimeout(function(){
+        stu.toggleClass("#load-box","tall","short");
+        stu.toggleClass("#load-box","narrow","long");
+      }, 50);
+    }, 2300);
+    setTimeout(function(){
+      stu.removeClass("#load-line","rotate-30-counterclock");
+      stu.removeClass("#load-line2","rotate-30-clock");
+    }, 2300);
+    setTimeout(function(){
+      stu.toggleClass("#home-image1","hidden","visible");
+      setTimeout(function(){
+     	stu.toggleClass("#load-box","tall","short");
+        stu.toggleClass("#load-box","narrow","long");
+        setTimeout(function(){
+          stu.toggleClass("#load-box","tall","short");
+		  stu.toggleClass("#page-loaded","hidden","visible");
+          setTimeout(function(){
+           	animateMe();
+            stu.toggleClass("#load-screen","block","hide");
+          }, 500);
+        }, 500);
+      }, 500);
+    }, 3000);
+    
+};
+// openMenu function
+// ========================================================
+//function openMenu() {
+//	stu.toggleClass("menu","closed","open");
+//};
+    
+// stu toggle functions
+// ========================================================
+var stu = {};
+stu.styleElement = function (element, prop, val) {
+  element.style.setProperty(prop, val);
+};
+stu.toggleShow = function (sel) {
+  var i, x = stu.getElements(sel), xl = x.length;
+  for (i = 0; i < xl; i++) {    
+    if (x[i].style.display == "none") {
+      stu.styleElement(x[i], "display", "block");
+    } else {
+      stu.styleElement(x[i], "display", "none");
+    }
+  }
+};
+stu.addClass = function (sel, name) {
+  stu.addClassElements(stu.getElements(sel), name);
+};
+stu.addClassElements = function (elements, name) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {
+    stu.addClassElement(elements[i], name);
+  }
+};
+stu.addClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+};
+stu.removeClass = function (sel, name) {
+  stu.removeClassElements(stu.getElements(sel), name);
+};
+stu.removeClassElements = function (elements, name) {
+  var i, l = elements.length, arr1, arr2, j;
+  for (i = 0; i < l; i++) {
+    stu.removeClassElement(elements[i], name);
+  }
+};
+stu.removeClassElement = function (element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+};
+stu.toggleClass = function (sel, c1, c2) {
+  stu.toggleClassElements(stu.getElements(sel), c1, c2);
+};
+stu.toggleClassElements = function (elements, c1, c2) {
+  var i, l = elements.length;
+  for (i = 0; i < l; i++) {    
+    stu.toggleClassElement(elements[i], c1, c2);
+  }
+};
+stu.toggleClassElement = function (element, c1, c2) {
+  var t1, t2, t1Arr, t2Arr, j, arr, allPresent;
+  t1 = (c1 || "");
+  t2 = (c2 || "");
+  t1Arr = t1.split(" ");
+  t2Arr = t2.split(" ");
+  arr = element.className.split(" ");
+  if (t2Arr.length == 0) {
+    allPresent = true;
+    for (j = 0; j < t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      stu.removeClassElement(element, t1);
+    } else {
+      stu.addClassElement(element, t1);
+    }
+  } else {
+    allPresent = true;
+    for (j = 0; j < t1Arr.length; j++) {
+      if (arr.indexOf(t1Arr[j]) == -1) {allPresent = false;}
+    }
+    if (allPresent) {
+      stu.removeClassElement(element, t1);
+      stu.addClassElement(element, t2);          
+    } else {
+      stu.removeClassElement(element, t2);        
+      stu.addClassElement(element, t1);
+    }
+  }
+};
+stu.getElements = function (id) {
+  if (typeof id == "object") {
+    return [id];
+  } else {
+    return document.querySelectorAll(id);
+  }
+};
+</script>
+	
+	<script>
+		// Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+	</script>
+
+<script>
+( function( $ ) {
+    /*
+     * span-letters.js
+     * 
+     * Example usage: jQuery('.selector').spanLetters();
+     */
+     
+    $.fn.spanLetters = function() {
+        // Loop through each element on which this function has been called
+        this.each( function() {   
+            
+            // Scope the variables
+            var words, i, text;
+          
+            // Make an array with each letter of the string as a value
+            words = $( this ).text().split( '' );
+            // Loop through the letters and wrap each one in a span
+            for ( i = 0; i in words; i++ ) {
+                words[i] = '<span class="sl' + ( i + 1 ) + ' span-letter">' + words[i] + '</span>'
+            };
+            // Join our array of span-wrapped letters back into a string
+            text = words.join( '' );
+            // Replace the original string with the new string
+            $( this ).html( text );
+        })
+    }
+}( jQuery ));
+// Call spanLetters on our target
+$( ".page-title" ).spanLetters();
+targetPageTitle = $( ".page-title span" ); // Select our spans
+duration = 5000; // Set duration of the effect here
+speed = 90; // Set animation speed through the letters here
+// Add the animation class to the letter, then remove it later
+function animateLetter( value ) {
+  if ( turnedOn ) {
+    
+    setTimeout( function() {
+      $( value ).addClass( "active" );
+    }, 0 );
+    setTimeout( function() {
+      //stopAnimateLetter( value );  
+    }, duration );
+      
+  }
+  
+};
+// Remove the animation class from the letter
+function stopAnimateLetter( value ) {
+  $( value ).removeClass( "active" );
+};
+// Trigger function
+function startEverything() {
+  
+  // Loop through our collection of spans
+  targetPageTitle.each( function( index, value ) {
+    // Sequentially delay the firing of the animation through the letters
+    timer = setTimeout( function() {
+      animateLetter( value );
+    }, speed*index );
+  });     
+}
+   
+function animateMe() { 
+        
+  turnedOn = true;
+  startEverything();
+        
+};
+</script>
+
+    <script>
+      function hasScrolled() {
+        var st = $(this).scrollTop();
+        if(st > 100) {
+          document.getElementById("nav").style.top = "0";
+	  	  document.getElementById("nav").style.backgroundColor = "#fff";
+		  document.getElementById("nav").style.boxShadow = "0 0 15px rgba(51,51,51,0.8)";
+		  document.getElementById("site-title").style.color = "#171717";
+		  document.getElementById("site-title").style.left = "175px";
+        } else {
+          document.getElementById("nav").style.top = "15%";
+		  document.getElementById("nav").style.backgroundColor = "transparent";
+		  document.getElementById("nav").style.boxShadow = "none";
+		  document.getElementById("site-title").style.color = "#171717";
+		  document.getElementById("site-title").style.left = "50%";
+        }
+      }
+       </script>
+       <script>
+         
+      $('body').bind('touchstart',function() {});
+      
+      function isTouchSupported() {
+		
+        var msTouchEnabled = window.navigator.msMaxTouchPoints;
+        var generalTouchEnabled = 'ontouchstart' in document.createElement('div');
+ 
+        if (msTouchEnabled || generalTouchEnabled) {
+          return true; 
+	} 
+	return false;
+      }
+	       
+      if(isTouchSupported()){
+        document.getElementsByClassName('bg-fixed')[0].style.backgroundAttachment = 'scroll';
+      }
+    </script>
+  
+    <script>
+// open slide shows
+// =======================================================
+function openSlideShow() {
+  stu.toggleClass('#slide-show','hide');
+}
+      
+// open engagement slide show
+// =======================================================
+function openESlides() {
+  stu.toggleClass('#engagement-slides','hide');
+  showESlides(eIndex);
+}
+      
+// engagement slide show
+// =======================================================
+var eIndex = 1;
+showESlides(eIndex);
+      
+function plusESlides(n) {
+  hideESlides(eIndex);
+  setTimeout( function() { showESlides(eIndex += n); }, 800);
+}
+      
+function currentESlide(n) {
+  showESlides(eIndex = n);
+}
+      
+function hideESlides(n) {
+  var eSlides = document.getElementsByClassName("eSlide");
+  
+  eSlides[eIndex-1].style.transition = "0.8s";
+  eSlides[eIndex-1].style.opacity = "0";
+  
+}
+function showESlides(n) {
+  var es;
+  var eSlides = document.getElementsByClassName("eSlide");
+  
+  if (n > eSlides.length) {eIndex = 1} 
+  if (n < 1) {eIndex =eSlides.length}
+  
+  for (es = 0; es < eSlides.length; es++) {
+  
+    eSlides[es].style.display = "none";
+    
+  }
+  
+    eSlides[eIndex-1].style.transition = "1s";
+    eSlides[eIndex-1].style.display = "block";
+    eSlides[eIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      eSlides[eIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change engagement slides
+    // ====================================================
+    $('#engagement-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusESlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusESlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+      // video slideshow
+      // =======================
+      var videoIndex = 1;
+showVideos(videoIndex);
+function plusVideos(n) {
+  showVideos(videoIndex += n);
+}
+function currentVideo(n) {
+  showVideos(videoIndex = n);
+}
+function showVideos(n) {
+  var i;
+  var x = document.getElementsByClassName("video");
+  var dots = document.getElementsByClassName("video-selector");
+  if (n > x.length) {videoIndex = 1}
+  if (n < 1) {videoIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" hover-opacity-off", "");
+  }
+  x[videoIndex-1].style.display = "block";
+  dots[videoIndex-1].className += " hover-opacity-off";
+}
+      
+// open wedding slide show
+// =======================================================
+function openWSlides() {
+  stu.toggleClass('#wedding-slides','hide');
+  showWSlides(wIndex);
+}
+      
+// wedding slide show
+// =======================================================
+var wIndex = 1;
+showWSlides(wIndex);
+      
+function plusWSlides(n) {
+  hideWSlides(wIndex);
+  setTimeout( function() { showWSlides(wIndex += n); }, 800);
+}
+      
+function currentWSlide(n) {
+  showWSlides(wIndex = n);
+}
+      
+function hideWSlides(n) {
+  var wSlides = document.getElementsByClassName("wSlide");
+  
+  wSlides[wIndex-1].style.transition = "0.8s";
+  wSlides[wIndex-1].style.opacity = "0";
+  
+}
+function showWSlides(n) {
+  var ws;
+  var wSlides = document.getElementsByClassName("wSlide");
+  
+  if (n > wSlides.length) {wIndex = 1} 
+  if (n < 1) {wIndex =wSlides.length}
+  
+  for (ws = 0; ws < wSlides.length; ws++) {
+  
+    wSlides[ws].style.display = "none";
+    
+  }
+  
+    wSlides[wIndex-1].style.transition = "1s";
+    wSlides[wIndex-1].style.display = "block";
+    wSlides[wIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      wSlides[wIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change engagement slides
+    // ====================================================
+    $('#wedding-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusWSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusWSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+      // open newborn slide show
+// =======================================================
+function openNSlides() {
+  stu.toggleClass('#newborn-slides','hide');
+  showNSlides(nIndex);
+}
+      
+// newborn slide show
+// =======================================================
+var nIndex = 1;
+showNSlides(nIndex);
+      
+function plusNSlides(n) {
+  hideNSlides(nIndex);
+  setTimeout( function() { showNSlides(nIndex += n); }, 800);
+}
+      
+function currentNSlide(n) {
+  showNSlides(nIndex = n);
+}
+      
+function hideNSlides(n) {
+  var nSlides = document.getElementsByClassName("nSlide");
+  
+  nSlides[nIndex-1].style.transition = "0.8s";
+  nSlides[nIndex-1].style.opacity = "0";
+  
+}
+function showNSlides(n) {
+  var ns;
+  var nSlides = document.getElementsByClassName("nSlide");
+  
+  if (n > nSlides.length) {nIndex = 1} 
+  if (n < 1) {nIndex =nSlides.length}
+  
+  for (ns = 0; ns < nSlides.length; ns++) {
+  
+    nSlides[ns].style.display = "none";
+    
+  }
+  
+    nSlides[nIndex-1].style.transition = "1s";
+    nSlides[nIndex-1].style.display = "block";
+    nSlides[nIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      nSlides[nIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change newborn slides
+    // ====================================================
+    $('#newborn-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusNSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusNSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+      // open sitter slide show
+// =======================================================
+function openSSlides() {
+  stu.toggleClass('#sitter-slides','hide');
+  showSSlides(sIndex);
+}
+      
+// sitter slide show
+// =======================================================
+var sIndex = 1;
+showSSlides(sIndex);
+      
+function plusSSlides(n) {
+  hideSSlides(sIndex);
+  setTimeout( function() { showSSlides(sIndex += n); }, 800);
+}
+      
+function currentSSlide(n) {
+  showSSlides(sIndex = n);
+}
+      
+function hideSSlides(n) {
+  var sSlides = document.getElementsByClassName("sSlide");
+  
+  sSlides[sIndex-1].style.transition = "0.8s";
+  sSlides[sIndex-1].style.opacity = "0";
+  
+}
+function showSSlides(n) {
+  var ss;
+  var sSlides = document.getElementsByClassName("sSlide");
+  
+  if (n > sSlides.length) {sIndex = 1} 
+  if (n < 1) {sIndex =sSlides.length}
+  
+  for (ss = 0; ss < sSlides.length; ss++) {
+  
+    sSlides[ss].style.display = "none";
+    
+  }
+  
+    sSlides[sIndex-1].style.transition = "1s";
+    sSlides[sIndex-1].style.display = "block";
+    sSlides[sIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      sSlides[sIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change sitter slides
+    // ====================================================
+    $('#sitter-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusSSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusSSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+            // open sitter slide show
+// =======================================================
+function openSSlides() {
+  stu.toggleClass('#sitter-slides','hide');
+  showSSlides(sIndex);
+}
+      
+// sitter slide show
+// =======================================================
+var sIndex = 1;
+showSSlides(sIndex);
+      
+function plusSSlides(n) {
+  hideSSlides(sIndex);
+  setTimeout( function() { showSSlides(sIndex += n); }, 800);
+}
+      
+function currentSSlide(n) {
+  showSSlides(sIndex = n);
+}
+      
+function hideSSlides(n) {
+  var sSlides = document.getElementsByClassName("sSlide");
+  
+  sSlides[sIndex-1].style.transition = "0.8s";
+  sSlides[sIndex-1].style.opacity = "0";
+  
+}
+function showSSlides(n) {
+  var ss;
+  var sSlides = document.getElementsByClassName("sSlide");
+  
+  if (n > sSlides.length) {sIndex = 1} 
+  if (n < 1) {sIndex =sSlides.length}
+  
+  for (ss = 0; ss < sSlides.length; ss++) {
+  
+    sSlides[ss].style.display = "none";
+    
+  }
+  
+    sSlides[sIndex-1].style.transition = "1s";
+    sSlides[sIndex-1].style.display = "block";
+    sSlides[sIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      sSlides[sIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change sitter slides
+    // ====================================================
+    $('#sitter-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusSSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusSSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+            // open family slide show
+// =======================================================
+function openFSlides() {
+  stu.toggleClass('#family-slides','hide');
+  showFSlides(fIndex);
+}
+      
+// family slide show
+// =======================================================
+var fIndex = 1;
+showFSlides(fIndex);
+      
+function plusFSlides(n) {
+  hideFSlides(fIndex);
+  setTimeout( function() { showFSlides(fIndex += n); }, 800);
+}
+      
+function currentFSlide(n) {
+  showFSlides(fIndex = n);
+}
+      
+function hideFSlides(n) {
+  var fSlides = document.getElementsByClassName("fSlide");
+  
+  fSlides[fIndex-1].style.transition = "0.8s";
+  fSlides[fIndex-1].style.opacity = "0";
+  
+}
+function showFSlides(n) {
+  var fs;
+  var fSlides = document.getElementsByClassName("fSlide");
+  
+  if (n > fSlides.length) {fIndex = 1} 
+  if (n < 1) {fIndex =fSlides.length}
+  
+  for (fs = 0; fs < fSlides.length; fs++) {
+  
+    fSlides[fs].style.display = "none";
+    
+  }
+  
+    fSlides[fIndex-1].style.transition = "1s";
+    fSlides[fIndex-1].style.display = "block";
+    fSlides[fIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      fSlides[fIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change family slides
+    // ====================================================
+    $('#family-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusFSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusFSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+                  // open fashion slide show
+// =======================================================
+function openFaSlides() {
+  stu.toggleClass('#fashion-slides','hide');
+  showFaSlides(faIndex);
+}
+      
+// fashion slide show
+// =======================================================
+var faIndex = 1;
+showFaSlides(faIndex);
+      
+function plusFaSlides(n) {
+  hideFaSlides(faIndex);
+  setTimeout( function() { showFaSlides(faIndex += n); }, 800);
+}
+      
+function currentFaSlide(n) {
+  showFaSlides(faIndex = n);
+}
+      
+function hideFaSlides(n) {
+  var faSlides = document.getElementsByClassName("faSlide");
+  
+  faSlides[faIndex-1].style.transition = "0.8s";
+  faSlides[faIndex-1].style.opacity = "0";
+  
+}
+function showFaSlides(n) {
+  var fas;
+  var faSlides = document.getElementsByClassName("faSlide");
+  
+  if (n > faSlides.length) {faIndex = 1} 
+  if (n < 1) {faIndex =faSlides.length}
+  
+  for (fas = 0; fas < faSlides.length; fas++) {
+  
+    faSlides[fas].style.display = "none";
+    
+  }
+  
+    faSlides[faIndex-1].style.transition = "1s";
+    faSlides[faIndex-1].style.display = "block";
+    faSlides[faIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      faSlides[faIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change fashion slides
+    // ====================================================
+    $('#fashion-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusFaSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusFaSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+</script>
+  
+<script>
+//enable touch events to change engagement slides
+      // ==================================================
+      window.addEventListener('load', function(){
+          var eng = document.getElementById('engagement-slides')
+          var hidetimer = null
+          
+          swipedetect(eng, function(swipedir){
+            if (swipedir != 'none'){
+                  clearTimeout(hidetimer)
+                  plusESlides(swipedir)
+              }
+          })
+          
+      }, false)
+                              
+          function swipedetect(eng, callback){
+            
+            var touchsurface = eng,
+              swipedir,
+              startX,
+              startY,
+              distX,
+              distY,
+              threshold = 60, //required min distance traveled to be considered swipe
+              restraint = 30, // maximum distance allowed at the same time in perpendicular direction
+              allowedTime = 700, // maximum time allowed to travel that distance
+              elapsedTime,
+              startTime,
+              handleswipe = callback || function(swipedir){}
+        
+            touchsurface.addEventListener('touchstart', function(e){
+              var touchobj = e.changedTouches[0]
+              swipedir = 'none'
+              dist = 0
+              startX = touchobj.pageX
+              startY = touchobj.pageY
+              startTime = new Date().getTime() // record time when finger first makes contact with surface
+             
+	            if(touchsurface.style.display != "none") {
+                e.preventDefault() // prevent scrolling when inside DIV
+              }
+            }, false)
+        
+            touchsurface.addEventListener('touchmove', function(e){
+              if (touchsurface.style.display != "none") {
+                e.preventDefault() // prevent scrolling when inside DIV
+              }
+            }, false)
+        
+          touchsurface.addEventListener('touchend', function(e){
+              var touchobj = e.changedTouches[0]
+              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+              elapsedTime = new Date().getTime() - startTime // get time elapsed
+              if (elapsedTime <= allowedTime){ // first condition for awipe met
+                  if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                      swipedir = (distX < 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
+                  }
+                  else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                      swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates down swipe
+                  }
+              }
+	      if (touchsurface.style.display != "none") {
+                handleswipe(swipedir)
+ //               e.preventDefault()
+	      }
+          }, false)
+      	//continue to trigger click event from the target of any touch event at the document level
+      	window.on('touchend', function(e){
+      		$(e.target).trigger('click');
+      	});
+      
+          }
+</script>
+
+</body>
+</html>
