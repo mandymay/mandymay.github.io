@@ -52,6 +52,7 @@ ul li {
 	padding: 4px 0;
 }
 footer ul li a {
+  color: #222;
   font-size: 10px;
 }
 footer ul li a:hover {
@@ -83,25 +84,69 @@ nav {
 #site-title {
 	transition: 0.3s;
 }
-.nav-lines {
+.nav-lines-left {
+	position: absolute;
+  background-color: #e1e1e1;
 	transition: 0.5s;
-    height: 1px;
-    width: 24px;
+  height: 1px;
+  width: 24px;
+  left: 0;
+  top: 50%;
+  transform: translate(0,-50%);
 }
-.is-home .nav-lines {
-	background-color: #e1e1e1;
+.nav-lines-right {
+	position: absolute;
+  background-color: #e1e1e1;
+	transition: 0.5s;
+  height: 1px;
+  width: 24px;
+  right: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+#slide-show {
+  z-index: 10000;
+}
+.video {
+  height: 300px;
+  width: 600px;
+  margin: 8px auto;
+  position: relative;
+  transition: 1s;
+}
+.video-selector {
+  height: 60px;
+  width: 120px;
+  margin: 8px;
+}
+svg:hover {
+	cursor:pointer;
+}
+.hover-opacity {
+  opacity: 0.6;
+}
+.hover-opacity-off,.hover-opacity:hover {
+  opacity: 1;
 }
 .portfolio {
-	height: 200px;
+	flex: 1 1 300px;
+	height: 250px;
 	margin: 8px;
-	box-sizing: border-box;
 	position: relative;
-    padding: 0;
+	-webkit-filter: none;
+	filter: none;
+	transition: 0.3s;
 }
 .portfolio:hover {
-	box-shadow: 0 0 16px #555;
+	box-shadow: 0 0 17px -1px #111;
 	-webkit-filter: saturation(0%);
 	filter: saturation(0%);
+}
+footer .portfolio {
+	height: auto;
+}
+footer .portfolio:hover {
+	box-shadow: none;
 }
 .container {
 	position: relative;
@@ -133,6 +178,9 @@ nav {
     left: 50%;
 	background-color: #333;
     padding: 0 24px;
+}
+.padding-around-16 {
+  padding: 16px;
 }
 .padding-32 {
 	padding: 32px 0;
@@ -194,31 +242,127 @@ nav {
 	background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    z-index: -1;
 }
 .bg1 {
-	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/bridal/MMS_1011.jpg?raw=true');
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/family/MMS_5783.jpg?raw=true');
 }
 .default-bg {
 	background-color: #333;
 }
 	.bg-portfolio1 {
-	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/thumbnails/MMS_6693%20-%20Thumbnail.jpg?raw=true');
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_6693.jpg?raw=true');
 }
 	.bg-portfolio2 {
-	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/thumbnails/MMS_3461%20-%20Thumbnail.jpg?raw=true');
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_3461.jpg?raw=true');
 }
 	.bg-portfolio3 {
-	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/thumbnails/MMS_6078%20-%20Thumbnail.jpg?raw=true');
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_6078.jpg?raw=true');
 }
 	.bg-portfolio4 {
-	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/thumbnails/MMS_5505%20-%20Thumbnail.jpg?raw=true');
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_5505.jpg?raw=true');
 }
 	.bg-portfolio5 {
-	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/thumbnails/MMS_5866%20-%20Thumbnail.jpg?raw=true');
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/maternity/MMS_8964.jpg?raw=true');
 }
 	.bg-portfolio6 {
-	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/thumbnails/MMS_6090%20-%20Thumbnail.jpg?raw=true');
+	background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_6090.jpg?raw=true');
+}
+	
+/*engagement slides*/
+.bg-e1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_6693.jpg?raw=true');
+}
+.bg-e2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_0324.jpg?raw=true');
+}
+.bg-e3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_2055.jpg?raw=true');
+}
+.bg-e4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_6194.jpg?raw=true');
+}
+.bg-e5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_6125.jpg?raw=true');
+}
+/*bridals and wedding slides*/
+.bg-w1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_3461.jpg?raw=true');
+}
+.bg-w2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_2742.jpg?raw=true');
+}
+.bg-w3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_2920.jpg?raw=true');
+}
+.bg-w4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_6138.jpg?raw=true');
+}
+.bg-w5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/bridal/MMS_1011.jpg?raw=true');
+}
+/*newborn slides*/
+.bg-n1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_6078.jpg?raw=true');
+}
+.bg-n2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_2831.jpg?raw=true');
+}
+.bg-n3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_3049.jpg?raw=true');
+}
+.bg-n4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_4256.jpg?raw=true');
+}
+.bg-n5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/newborn/MMS_6802.jpg?raw=true');
+}
+/*sitters slides*/
+.bg-s1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_5505.jpg?raw=true');
+}
+.bg-s2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_1339.jpg?raw=true');
+}
+.bg-s3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_2555.jpg?raw=true');
+}
+.bg-s4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_4629.jpg?raw=true');
+}
+.bg-s5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/sittersession/MMS_0277.jpg?raw=true');
+}
+/*family slides*/
+.bg-f1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/maternity/MMS_8964.jpg?raw=true');
+}
+.bg-f2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/kids/MMS_0996.jpg?raw=true');
+}
+.bg-f3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/kids/MMS_6395.jpg?raw=true');
+}
+.bg-f4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/kids/MMS_6232.jpg?raw=true');
+}
+.bg-f5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/kids/MMS_2643.jpg?raw=true');
+}
+/*seniors and fashion slides*/
+.bg-fa1 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/weddingday/MMS_6090.jpg?raw=true');
+}
+.bg-fa2 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_2055.jpg?raw=true');
+}
+.bg-fa3 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_2055.jpg?raw=true');
+}
+.bg-fa4 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_2055.jpg?raw=true');
+}
+.bg-fa5 {
+  background-image: url('https://github.com/mandymay/mandymay.github.io/blob/master/images/engagement/MMS_2055.jpg?raw=true');
 }
 .bg-fixed {
   background-attachment: fixed;
@@ -226,19 +370,18 @@ nav {
 .overlay {
   height: 100%;
   width: 100%;
-  background-color: rgba(51,51,51,0.4);
+  background-color: rgba(0,0,0,0.3);
 }
 .bg-overlay {
 	height: 100%;
-    width: 100%;
-    box-sizing: border-box;
+        width: 100%;
+        box-sizing: border-box;
 	position: relative;
-	background-color: rgba(51,51,51,0.2);
-	trasition: 0.3s;
+	background-color: rgba(0,0,0,0.3);
+	transition: 0.3s;
 }
 .bg-overlay:hover {
-	background-color: rgba(85,107,47,0.6);
-	box-shadow: 0 0 10px rgba(51,51,51,0.7);
+	background-color: rgba(0,0,0,0);
 	cursor: pointer;
 }
 .bg-hoverable {
@@ -266,6 +409,9 @@ h2, h2 a, a {
     font-size: 16px;
     font-weight: normal;
     text-decoration: none;
+}
+footer h2, footer h2 a, footer a {
+	color: #222;
 }
 h2 a:hover {
 	color: #222;
@@ -340,6 +486,16 @@ nav.top {
 	bottom: 0;
 	right: 0;
 }
+.topleft {
+  position: absolute;
+	top: 0;
+	left: 0;
+}
+.topright {
+  position: fixed;
+	top: 0;
+	right: 0;
+}
 #portfolios {
 	bottom 20px; !important
 }
@@ -355,6 +511,18 @@ nav.top {
 }
 .full-width {
 	width: 100%;
+}
+.fixed-left {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+.fixed-right {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translate(0,-50%);
 }
 .left {
 	float: left;
@@ -425,6 +593,22 @@ nav.top {
 .front {
 	z-index: 1000;
 }
+.eSlide,.wSlide,.nSlide,.sSlide,.fSlide,.faSlide {
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+#engagement-slides, #wedding-slides, #newborn-slides, #sitter-slides, #family-slides, #fashion-slides {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  height: 100%;
+  width: 100%;
+}
 /*
 *borders
 */
@@ -433,359 +617,28 @@ nav.top {
 }
 /* grid
 /* =============================== */
-.row {
-  margin-left:0;
-  margin-right:0;
-  margin-bottom:20px
-}
-.row:after {
-  content:"";
-  display:table;
-  clear:both
-}
-.row .col {
-  float:left;
-  box-sizing:border-box;
-  padding:.75rem;
-  min-height:1px
-}
-/*.row .col[class*="push-"],.row .col[class*="pull-"] {
-  position:relative
-}*/
-.row .col.s1 {
-  width:8.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.s2 {
-  width:16.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.s3 {
-  width:25%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.s4 {
-  width:33.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.s5 {
-  width:41.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.s6 {
-  width:50%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.s7 {
-  width:58.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.s8 {
-  width:66.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.s9 {
-  width:75%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.s10 {
-  width:83.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.s11 {
-  width:91.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.s12 {
-  width:100%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.offset-s1 {
-  margin-left:8.3333333333%
-}
-.row .col.offset-s2 {
-  margin-left:16.6666666667%
-}
-.row .col.offset-s3 {
-  margin-left:25%
-}
-.row .col.offset-s4 {
-  margin-left:33.3333333333%
-}
-.row .col.offset-s5 {
-  margin-left:41.6666666667%
-}
-.row .col.offset-s6 {
-  margin-left:50%
-}
-.row .col.offset-s7 {
-  margin-left:58.3333333333%
-}58.3333333333%
-}
-.row .col.offset-s8 {
-  margin-left:66.6666666667%
-}
-.row .col.offset-s9 {
-  margin-left:75%
-}
-.row .col.offset-s10 {
-  margin-left:83.3333333333%
-}
-.row .col.offset-s11 {
-  margin-left:91.6666666667%
-}
-.row .col.offset-s12 {
-  margin-left:100%
-}
-@media only screen and (min-width: 601px) {
-.hide-on-med-and-up {
-  display: none;
-}
-  .row .col.m1 {
-  width:8.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.m2 {
-  width:16.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.m3 {
-  width:25%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.m4 {
-  width:33.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.m5 {
-  width:41.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.m6 {
-  width:50%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.m7 {
-  width:58.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.m8 {
-  width:66.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.m9 {
-  width:75%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.m10 {
-  width:83.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.m11 {
-  width:91.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.m12 {
-  width:100%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.offset-m1 {
-  margin-left:8.3333333333%
-}
-.row .col.offset-m2 {
-  margin-left:16.6666666667%
-}
-.row .col.offset-m3 {
-  margin-left:25%
-}
-.row .col.offset-m4 {
-  margin-left:33.3333333333%
-}
-.row .col.offset-m5 {
-  margin-left:41.6666666667%
-}
-.row .col.offset-m6 {
-  margin-left:50%
-}
-.row .col.offset-m7 {
-  margin-left:58.3333333333%
-}
-.row .col.offset-m8 {
-  margin-left:66.6666666667%
-}
-.row .col.offset-m9 {
-  margin-left:75%
-}
-.row .col.offset-m10 {
-  margin-left:83.3333333333%
-}
-.row .col.offset-m11 {
-  margin-left:91.6666666667%
-}
-.row .col.offset-m12 {
-  margin-left:100%
-}
-}
-@media only screen and (min-width: 993px) {
-	.hide-on-large-only {
-		display: none;
-	}
-  .row .col.l1 {
-  width:8.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.l2 {
-  width:16.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.l3 {
-  width:25%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.l4 {
-  width:33.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.l5 {
-  width:41.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.l6 {
-  width:50%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.l7 {
-  width:58.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.l8 {
-  width:66.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.l9 {
-  width:75%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.l10 {
-  width:83.3333333333%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.l11 {
-  width:91.6666666667%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.l12 {
-  width:100%;
-  margin-left:auto;
-  left:auto;
-  right:auto
-}
-.row .col.offset-l1 {
-  margin-left:8.3333333333%
-}
-.row .col.offset-l2 {
-  margin-left:16.6666666667%
-}
-.row .col.offset-l3 {
-  margin-left:25%
-}
-.row .col.offset-l4 {
-  margin-left:33.3333333333%
-}
-.row .col.offset-l5 {
-  margin-left:41.6666666667%
-}
-.row .col.offset-l6 {
-  margin-left:50%
-}
-.row .col.offset-l7 {
-  margin-left:58.3333333333%
-}
-.row .col.offset-l8 {
-  margin-left:66.6666666667%
-}
-.row .col.offset-l9 {
-  margin-left:75%
-}
-.row .col.offset-l10 {
-  margin-left:83.3333333333%
-}
-.row .col.offset-l11 {
-  margin-left:91.6666666667%
-}
-.row .col.offset-l12 {
-  margin-left:100%
-}
+.flex-container {
+	display: flex;
+	position: relative;
+	width: 100%;
+	max-width: 1000px;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	padding: 0 8px 48px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+.flex-container-space-around {
+  display: flex;
+	width: 100%;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center;
+	margin: 0 auto;
+	box-sizing: border-box;
 }
 /*
 *buttons 
@@ -813,10 +666,10 @@ nav.top {
     margin: 8px auto;
 }
 .btn-solid:hover, .btn-hollow:hover {
-	background-color: #145814;
-    color: #e1e1e1;
-    border-color: #145814;
-    box-shadow: 0 0 16px #555;
+	background-color: #e1e1e1;
+    color: #222;
+    border-color: #e1e1e1;
+    box-shadow: 0 0 17px -1px #111;
 }
 /*
 *keyframes
@@ -847,8 +700,18 @@ nav.top {
     	display: none;
     }
 }
+@media only screen and (min-width: 601px) {
+	.hide-on-med-and-up {
+    	display: none;
+    }
+}
 @media only screen and (max-width: 992px) {
 	.hide-on-med-and-down {
+    	display: none;
+    }
+}
+@media only screen and (min-width: 992px) {
+	.hide-on-large-only {
     	display: none;
     }
 }
@@ -894,19 +757,19 @@ nav.top {
 
   <header>
     <nav id="nav" class="center top">
-      <h3 id="site-title" class="spaced-2 caps white-text page-title">Mandy May Photograpy</h3>
+      <h3 id="site-title" class="spaced-2 caps black-text page-title">Mandy May Photograpy</h3>
     </nav>
   </header>
 
   <main id="main">
     <div class="relative full-screen">
 	  <div id="home-image1" class="image-box bg1 full-bg hidden"></div>
-      <a href='#portfolios' class="absolute bottommiddle center">
-        <svg class="enter" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+      <a href='#instagram' class="absolute bottommiddle center">
+        <svg class="enter" style='height: 80px; width: 67px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#222' stroke-width='4'/></svg>
       </a>
     </div> 
 		
-		<h3 class="caps spaced-2 center">Follow me <a href="https://www.instagram.com/mandy_may" target="_blank">@mandy_may</a></h3>
+		<h3 id="instagram" class="caps spaced-2 center">Follow me <a href="https://www.instagram.com/mandy_may" target="_blank">@mandy_may</a></h3>
 		<div class="hide-on-med-and-up">
 			<!-- LightWidget WIDGET --><script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/2d9763258f7d566294323cc4736847f9.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
 	  </div>
@@ -919,91 +782,208 @@ nav.top {
       <div class="container middle">
         <h1 class="caps spaced-2 white-text">Hi, I'm Mandy!</h1>
         <p class="white-text">I would love to take your pictures. Go ahead and hang around my site for a while, check out my work, learn a little more about me and what a session with me is like, and when you're ready feel free to contact me anytime.</p>
-        <a href="#" class="btn-solid">learn more</a>
+        <a href="#" class="btn-hollow">learn more</a>
       </div>
     </div>
   
-    <div id="portfolios" class="row">
-      <h1 class="col s12 caps center spaced-2">portfolios</h1>
-	  <div class="col s12 m6 l4">
-	    <div class="portfolio full-bg bg-portfolio1">
-		  <h2 class="caps spaced-4 bottomright align-right white-text front">engagements</h2>
+    <!-- portfolios -->
+    <div id="portfolios" class="flex-container">
+      <h1 class="caps center spaced-2 full-width">portfolios</h1>
+	    <div id="engagements" class="portfolio full-bg bg-portfolio1" onclick="openESlides();openSlideShow()">
+				<div class="bg-overlay"></div>
+        <h2 class="caps spaced-4 bottomright align-right white-text front">engagements</h2>
 	    </div>
-	  </div>
-	  <div class="col s12 m6 l4">
-	    <div class="portfolio full-bg bg-portfolio2">
+	    <div id="weddings" class="portfolio full-bg bg-portfolio2" onclick="openWSlides();openSlideShow()">
+				<div class="bg-overlay"></div>
 	  	  <h2 class="caps spaced-4 bottomright align-right white-text front">bridals &amp; weddings</h2>
 	    </div>
-	  </div>
-	  <div class="col s12 m6 l4">
-	    <div class="portfolio full-bg bg-portfolio3">
-	      <h2 class="caps spaced-4 bottomright align-right white-text front">newborn</h2>
+	    <div id="newborns" class="portfolio full-bg bg-portfolio3" onclick="openNSlides();openSlideShow()">
+				<div class="bg-overlay"></div>
+	      <h2 class="caps spaced-4 bottomright align-right white-text front">newborns</h2>
 	    </div>
-	  </div>
-	  <div class="col s12 m6 l4">
-	    <div class="portfolio full-bg bg-portfolio4">
-		  <h2 class="caps spaced-4 bottomright align-right white-text front">sitter sessions</h2>
+	    <div id="sitters" class="portfolio full-bg bg-portfolio4" onclick="openSSlides();openSlideShow()">
+				<div class="bg-overlay"></div>
+		    <h2 class="caps spaced-4 bottomright align-right white-text front">sitter sessions</h2>
 	    </div>
-	  </div>
-	  <div class="col s12 m6 l4">
-	    <div class="portfolio full-bg bg-portfolio5">
-		  <h2 class="caps spaced-4 bottomright align-right white-text front">family</h2>
+	    <div id="family" class="portfolio full-bg bg-portfolio5" onclick="openFSlides();openSlideShow()">
+				<div class="bg-overlay"></div>
+		    <h2 class="caps spaced-4 bottomright align-right white-text front">family</h2>
 	    </div>
-	  </div>
-	  <div class="col s12 m6 l4">
-	    <div class="portfolio full-bg bg-portfolio6">
-          <div class="bg-overlay"></div>
-		  <h2 class="caps spaced-4 bottomright align-right white-text front">seniors &amp; fashion</h2>
+	    <div id="fashion" class="portfolio full-bg bg-portfolio6" onclick="openFaSlides();openSlideShow()">
+        <div class="bg-overlay"></div>
+		    <h2 class="caps spaced-4 bottomright align-right white-text front">seniors &amp; fashion</h2>
 	    </div>
-	  </div>
+    </div>
+    
+    <!-- slide show -->
+    <div id="slide-show" class="fixed top default-bg full-screen hide">
+      <div id="slide-show-top" class="fixed top full-width">
+        <h3 class="hide-on-small-only center caps white-text spaced-2">Mandy May Photography</h3>
+        <h3 class="hide-on-med-and-up align-left caps white-text" style="padding-left: 30px;">Mandy May Photography</h3>
+      </div>
+      
+      <div id="engagement-slides" class="slides hide">
+        <div class="padding-around-16 topright" onclick="openESlides();openSlideShow()">
+          <svg style='height: 30px; width: 30px;' viewBox='0,0,50,50'><path d='M10 10 L40 40 M40 10 L10 40' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-right" onclick="plusESlides(1)">
+          <svg class="hide-on-small-only rotate-90-counterclock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-left" onclick="plusESlides(-1)">
+          <svg class="hide-on-small-only rotate-90-clock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+		    <div class="eSlide full-bg bg-e1"></div>
+        <div class="eSlide full-bg bg-e2"></div>
+        <div class="eSlide full-bg bg-e3"></div>
+        <div class="eSlide full-bg bg-e4"></div>
+        <div class="eSlide full-bg bg-e5"></div>
+      </div>
+      
+      <div id="wedding-slides" class="slides hide">
+        <div class="padding-around-16 topright" onclick="openWSlides();openSlideShow()">
+          <svg style='height: 30px; width: 30px;' viewBox='0,0,50,50'><path d='M10 10 L40 40 M40 10 L10 40' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-right" onclick="plusWSlides(1)">
+          <svg class="hide-on-small-only rotate-90-counterclock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-left" onclick="plusWSlides(-1)">
+          <svg class="hide-on-small-only rotate-90-clock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+		    <div class="wSlide full-bg bg-w1"></div>
+        <div class="wSlide full-bg bg-w2"></div>
+        <div class="wSlide full-bg bg-w3"></div>
+        <div class="wSlide full-bg bg-w4"></div>
+        <div class="wSlide full-bg bg-w5"></div>
+      </div>
+      
+      <div id="newborn-slides" class="slides hide">
+        <div class="padding-around-16 topright" onclick="openNSlides();openSlideShow()">
+          <svg style='height: 30px; width: 30px;' viewBox='0,0,50,50'><path d='M10 10 L40 40 M40 10 L10 40' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-right" onclick="plusNSlides(1)">
+          <svg class="hide-on-small-only rotate-90-counterclock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-left" onclick="plusNSlides(-1)">
+          <svg class="hide-on-small-only rotate-90-clock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+		    <div class="nSlide full-bg bg-n1"></div>
+        <div class="nSlide full-bg bg-n2"></div>
+        <div class="nSlide full-bg bg-n3"></div>
+        <div class="nSlide full-bg bg-n4"></div>
+        <div class="nSlide full-bg bg-n5"></div>
+      </div>
+      
+      <div id="sitter-slides" class="slides hide">
+        <div class="padding-around-16 topright" onclick="openSSlides();openSlideShow()">
+          <svg style='height: 30px; width: 30px;' viewBox='0,0,50,50'><path d='M10 10 L40 40 M40 10 L10 40' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-right" onclick="plusSSlides(1)">
+          <svg class="hide-on-small-only rotate-90-counterclock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-left" onclick="plusSSlides(-1)">
+          <svg class="hide-on-small-only rotate-90-clock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+		    <div class="sSlide full-bg bg-s1"></div>
+        <div class="sSlide full-bg bg-s2"></div>
+        <div class="sSlide full-bg bg-s3"></div>
+        <div class="sSlide full-bg bg-s4"></div>
+        <div class="sSlide full-bg bg-s5"></div>
+      </div>
+      
+      <div id="family-slides" class="slides hide">
+        <div class="padding-around-16 topright" onclick="openFSlides();openSlideShow()">
+          <svg style='height: 30px; width: 30px;' viewBox='0,0,50,50'><path d='M10 10 L40 40 M40 10 L10 40' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-right" onclick="plusFSlides(1)">
+          <svg class="hide-on-small-only rotate-90-counterclock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-left" onclick="plusFSlides(-1)">
+          <svg class="hide-on-small-only rotate-90-clock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+		    <div class="fSlide full-bg bg-f1"></div>
+        <div class="fSlide full-bg bg-f2"></div>
+        <div class="fSlide full-bg bg-f3"></div>
+        <div class="fSlide full-bg bg-f4"></div>
+        <div class="fSlide full-bg bg-f5"></div>
+      </div>
+      
+      <div id="fashion-slides" class="slides hide">
+        <div class="padding-around-16 topright" onclick="openFaSlides();openSlideShow()">
+          <svg style='height: 30px; width: 30px;' viewBox='0,0,50,50'><path d='M10 10 L40 40 M40 10 L10 40' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-right" onclick="plusFaSlides(1)">
+          <svg class="hide-on-small-only rotate-90-counterclock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+        <div class="fixed-left" onclick="plusFaSlides(-1)">
+          <svg class="hide-on-small-only rotate-90-clock" style='height: 60px; width: 50px;' viewBox='0,0,100,50'><path d='M20 10 L50 40 L80 10' fill='transparent' stroke='#e1e1e1' stroke-width='4'/></svg>
+        </div>
+		    <div class="faSlide full-bg bg-fa1"></div>
+        <div class="faSlide full-bg bg-fa2"></div>
+        <div class="faSlide full-bg bg-fa3"></div>
+        <div class="faSlide full-bg bg-fa4"></div>
+        <div class="faSlide full-bg bg-fa5"></div>
+      </div>
+      
+      <div id="slide-show-bottom" class="fixed bottom full-width flex-container-space-around">
+        <div class="nav-lines-left"></div>
+	<div class="nav-lines-right"></div>
+        <a href="mailto:bookings@mandymayphotography.com?Subject=Website%20Booking%20Inquiry" target="_top"><h2 class="center caps white-text spaced-4">contact</h2></a>
+        <a href="#"><h2 class="center caps white-text spaced-4">about</h2></a>
+      </div>
     </div>
   
-    <div id="videos" class="row default-bg">
-      <h1 class="col s12 caps center spaced-2 white-text">videos</h1>
-	  <div class="col s12 m6 front">
-	    <div class="portfolio full-bg bg-portfolio1">
-		  <h2 class="caps spaced-4 bottomright align-right white-text front">engagements</h2>
-	    </div>
-	  </div>
-	  <div class="col s12 m6">
-	    <div class="portfolio full-bg bg-portfolio2">
-		  <h2 class="caps spaced-4 bottomright align-right white-text front">weddings</h2>
-	    </div>
-	  </div>
+    <!-- videos -->
+    <div id="videos" class="full-width default-bg">
+			<div class="flex-container" style="padding-bottom: 0;">
+        <h1 class="full-width caps center spaced-2 white-text">videos</h1>
+	      <div class="video full-bg bg-portfolio1">
+		      <!--<h2 class="caps spaced-4 bottomright align-right white-text front">Jim & Jessica</h2>-->
+        </div>
+        <div class="video full-bg bg-portfolio2"></div>
+        <div class="video full-bg bg-portfolio3"></div>
+	      <!--<div class="portfolio full-bg bg-portfolio2">
+				  <div class="bg-overlay"></div>
+		      <h2 class="caps spaced-4 bottomright align-right white-text front">weddings</h2>
+	      </div>-->
+		  </div>
+      <div class="flex-container">
+        <div class="video-selector full-bg bg-portfolio1 hover-opacity hover-opacity-off" onclick="currentVideo(1)"></div>
+        <div class="video-selector full-bg bg-portfolio2 hover-opacity hover-opacity-off" onclick="currentVideo(2)"></div>
+        <div class="video-selector full-bg bg-portfolio3 hover-opacity hover-opacity-off" onclick="currentVideo(3)"></div>
+      </div>
     </div>
   </main>
 
   <footer class="relative">
-    <div class="padding-32"><div>
-    <div class="row">
-      <div class="col s12 m6">
-        <h2 class="spaced-2 caps center">book a session</h2>
+    <div class="padding-32"></div>
+			
+    <div class="flex-container-space-around">
+			
+			<div class="portfolio">
+        <h2 class="spaced-2 caps center black-text">book a session</h2>
         <hr/>
-        <div class="row">
-          <div class="col s6">
-            <ul>
-              <li class="center"><a href="#" class="caps">engagements</a></li>
-              <li class="center"><a href="#" class="caps">bridals</a></li>
-              <li class="center"><a href="#" class="caps">weddings</a></li>
-              <li class="center"><a href="#" class="caps">maternity</a></li>
-            </ul>
-          </div>
-          <div class="col s6">
-            <ul>
-              <li class="center"><a href="#" class="caps">newborns</a></li>
-              <li class="center"><a href="#" class="caps">sitters</a></li>
-              <li class="center"><a href="#" class="caps">family</a></li>
-              <li class="center"><a href="#" class="caps">seniors</a></li>
-            </ul>
-          </div>
+        <div class="flex-container-space-around black-text">
+          <ul>
+            <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Engagement%20Booking%20Inquiry" class="caps">engagements</a></li>
+            <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Wedding%20Booking%20Inquiry" class="caps">weddings</a></li>
+	    <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Newborn%20Booking%20Inquiry" class="caps">newborns</a></li>
+          </ul>
+          <ul>
+            <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Sitters%20Booking%20Inquiry" class="caps">sitters</a></li>
+            <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Family%20Booking%20Inquiry" class="caps">family</a></li>
+            <li class="center"><a href="mailto:bookings@mandymayphotography.com?Subject=Senior%20Booking%20Inquiry" class="caps">seniors</a></li>
+          </ul>
         </div>
       </div>
-      <div class="col s12 m6">
-        <h2 class="spaced-2 caps center">expectations</h2>
+			
+			<div class="portfolio">
+        <h2 class="spaced-2 caps center black-text">expectations</h2>
         <hr/>
-        <p class="center" style="color: #999;">This would be a short paragraph breifly explaining 1) what the customer can expect from you and 2) what you expect of your customers. Keep this very generic, for all sessions. Maybe say something about "no printed t-shirts", "refund policy", general things like that.</p>
+        <p class="center black-text">This would be a short paragraph breifly explaining 1) what the customer can expect from you and 2) what you expect of your customers. Keep this very generic, for all sessions. Maybe say something about "no printed t-shirts", "refund policy", general things like that.</p>
       </div>
+			
     </div>
+			
     <a href='http://www.designerstu.com' target='_blank' class="center">
       <p style='color: #222; line-height: 10px;'>Built by
         <span style='-webkit-transform: translate(0,30%); -ms-transform: translate(0,30%); transform: translate(0,30%); display: inline-block; height: 25px; width: 25px;'>
@@ -1020,27 +1000,27 @@ nav.top {
 <script>
 function pageLoad() {
     setTimeout(function(){
-		stu.toggleClass("#load-line","narrow","long");
-        stu.toggleClass("#load-line2","narrow","long");
+		  stu.toggleClass("#load-line","narrow","long");
+      stu.toggleClass("#load-line2","narrow","long");
     }, 50);
     setTimeout(function(){
     	stu.addClass("#load-line","rotate-30-counterclock");
-        stu.addClass("#load-line2","rotate-30-clock");
+      stu.addClass("#load-line2","rotate-30-clock");
     }, 700);
     setTimeout(function(){
     	stu.toggleClass("#load-line","narrow","long");
-        stu.toggleClass("#load-line2","narrow","long");
+      stu.toggleClass("#load-line2","narrow","long");
     }, 1600);
     setTimeout(function(){
     	stu.toggleClass("#load-box","hide","block");
-        setTimeout(function(){
+      setTimeout(function(){
         stu.toggleClass("#load-box","tall","short");
         stu.toggleClass("#load-box","narrow","long");
-        }, 50);
+      }, 50);
     }, 2300);
     setTimeout(function(){
-        stu.removeClass("#load-line","rotate-30-counterclock");
-        stu.removeClass("#load-line2","rotate-30-clock");
+      stu.removeClass("#load-line","rotate-30-counterclock");
+      stu.removeClass("#load-line2","rotate-30-clock");
     }, 2300);
     setTimeout(function(){
       stu.toggleClass("#home-image1","hidden","visible");
@@ -1078,16 +1058,6 @@ stu.toggleShow = function (sel) {
       stu.styleElement(x[i], "display", "block");
     } else {
       stu.styleElement(x[i], "display", "none");
-    }
-  }
-};
-stu.togglePaddingProj = function (sel) {
-  var i, x = stu.getElements(sel), l = x.length;
-  for (i = 0; i < l; i++) {    
-    if (x[i].style.padding == "0px") {
-      stu.styleElement(x[i], "padding", "48px 24px 24px");
-    } else {
-      stu.styleElement(x[i], "padding", "0px");
     }
   }
 };
@@ -1294,18 +1264,20 @@ function animateMe() {
           document.getElementById("nav").style.top = "0";
 	  	  document.getElementById("nav").style.backgroundColor = "#fff";
 		  document.getElementById("nav").style.boxShadow = "0 0 15px rgba(51,51,51,0.8)";
-		  document.getElementById("site-title").style.color = "#222";
+		  document.getElementById("site-title").style.color = "#171717";
 		  document.getElementById("site-title").style.left = "175px";
         } else {
           document.getElementById("nav").style.top = "15%";
 		  document.getElementById("nav").style.backgroundColor = "transparent";
 		  document.getElementById("nav").style.boxShadow = "none";
-		  document.getElementById("site-title").style.color = "#e1e1e1";
+		  document.getElementById("site-title").style.color = "#171717";
 		  document.getElementById("site-title").style.left = "50%";
         }
       }
        </script>
        <script>
+         
+      $('body').bind('touchstart',function() {});
       
       function isTouchSupported() {
 		
@@ -1322,6 +1294,690 @@ function animateMe() {
         document.getElementsByClassName('bg-fixed')[0].style.backgroundAttachment = 'scroll';
       }
     </script>
+  
+    <script>
+// open slide shows
+// =======================================================
+function openSlideShow() {
+  stu.toggleClass('#slide-show','hide');
+}
+      
+// open engagement slide show
+// =======================================================
+function openESlides() {
+  stu.toggleClass('#engagement-slides','hide');
+  showESlides(eIndex);
+}
+      
+// engagement slide show
+// =======================================================
+var eIndex = 1;
+showESlides(eIndex);
+      
+function plusESlides(n) {
+  hideESlides(eIndex);
+  setTimeout( function() { showESlides(eIndex += n); }, 800);
+}
+      
+function currentESlide(n) {
+  showESlides(eIndex = n);
+}
+      
+function hideESlides(n) {
+  var eSlides = document.getElementsByClassName("eSlide");
+  
+  eSlides[eIndex-1].style.transition = "0.8s";
+  eSlides[eIndex-1].style.opacity = "0";
+  
+}
+function showESlides(n) {
+  var es;
+  var eSlides = document.getElementsByClassName("eSlide");
+  
+  if (n > eSlides.length) {eIndex = 1} 
+  if (n < 1) {eIndex =eSlides.length}
+  
+  for (es = 0; es < eSlides.length; es++) {
+  
+    eSlides[es].style.display = "none";
+    
+  }
+  
+    eSlides[eIndex-1].style.transition = "1s";
+    eSlides[eIndex-1].style.display = "block";
+    eSlides[eIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      eSlides[eIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change engagement slides
+    // ====================================================
+    $('#engagement-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusESlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusESlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+      // video slideshow
+      // =======================
+      var videoIndex = 1;
+showVideos(videoIndex);
+function plusVideos(n) {
+  showVideos(videoIndex += n);
+}
+function currentVideo(n) {
+  showVideos(videoIndex = n);
+}
+function showVideos(n) {
+  var i;
+  var x = document.getElementsByClassName("video");
+  var dots = document.getElementsByClassName("video-selector");
+  if (n > x.length) {videoIndex = 1}
+  if (n < 1) {videoIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" hover-opacity-off", "");
+  }
+  x[videoIndex-1].style.display = "block";
+  dots[videoIndex-1].className += " hover-opacity-off";
+}
+      
+// open wedding slide show
+// =======================================================
+function openWSlides() {
+  stu.toggleClass('#wedding-slides','hide');
+  showWSlides(wIndex);
+}
+      
+// wedding slide show
+// =======================================================
+var wIndex = 1;
+showWSlides(wIndex);
+      
+function plusWSlides(n) {
+  hideWSlides(wIndex);
+  setTimeout( function() { showWSlides(wIndex += n); }, 800);
+}
+      
+function currentWSlide(n) {
+  showWSlides(wIndex = n);
+}
+      
+function hideWSlides(n) {
+  var wSlides = document.getElementsByClassName("wSlide");
+  
+  wSlides[wIndex-1].style.transition = "0.8s";
+  wSlides[wIndex-1].style.opacity = "0";
+  
+}
+function showWSlides(n) {
+  var ws;
+  var wSlides = document.getElementsByClassName("wSlide");
+  
+  if (n > wSlides.length) {wIndex = 1} 
+  if (n < 1) {wIndex =wSlides.length}
+  
+  for (ws = 0; ws < wSlides.length; ws++) {
+  
+    wSlides[ws].style.display = "none";
+    
+  }
+  
+    wSlides[wIndex-1].style.transition = "1s";
+    wSlides[wIndex-1].style.display = "block";
+    wSlides[wIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      wSlides[wIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change engagement slides
+    // ====================================================
+    $('#wedding-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusWSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusWSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+      // open newborn slide show
+// =======================================================
+function openNSlides() {
+  stu.toggleClass('#newborn-slides','hide');
+  showNSlides(nIndex);
+}
+      
+// newborn slide show
+// =======================================================
+var nIndex = 1;
+showNSlides(nIndex);
+      
+function plusNSlides(n) {
+  hideNSlides(nIndex);
+  setTimeout( function() { showNSlides(nIndex += n); }, 800);
+}
+      
+function currentNSlide(n) {
+  showNSlides(nIndex = n);
+}
+      
+function hideNSlides(n) {
+  var nSlides = document.getElementsByClassName("nSlide");
+  
+  nSlides[nIndex-1].style.transition = "0.8s";
+  nSlides[nIndex-1].style.opacity = "0";
+  
+}
+function showNSlides(n) {
+  var ns;
+  var nSlides = document.getElementsByClassName("nSlide");
+  
+  if (n > nSlides.length) {nIndex = 1} 
+  if (n < 1) {nIndex =nSlides.length}
+  
+  for (ns = 0; ns < nSlides.length; ns++) {
+  
+    nSlides[ns].style.display = "none";
+    
+  }
+  
+    nSlides[nIndex-1].style.transition = "1s";
+    nSlides[nIndex-1].style.display = "block";
+    nSlides[nIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      nSlides[nIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change newborn slides
+    // ====================================================
+    $('#newborn-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusNSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusNSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+      // open sitter slide show
+// =======================================================
+function openSSlides() {
+  stu.toggleClass('#sitter-slides','hide');
+  showSSlides(sIndex);
+}
+      
+// sitter slide show
+// =======================================================
+var sIndex = 1;
+showSSlides(sIndex);
+      
+function plusSSlides(n) {
+  hideSSlides(sIndex);
+  setTimeout( function() { showSSlides(sIndex += n); }, 800);
+}
+      
+function currentSSlide(n) {
+  showSSlides(sIndex = n);
+}
+      
+function hideSSlides(n) {
+  var sSlides = document.getElementsByClassName("sSlide");
+  
+  sSlides[sIndex-1].style.transition = "0.8s";
+  sSlides[sIndex-1].style.opacity = "0";
+  
+}
+function showSSlides(n) {
+  var ss;
+  var sSlides = document.getElementsByClassName("sSlide");
+  
+  if (n > sSlides.length) {sIndex = 1} 
+  if (n < 1) {sIndex =sSlides.length}
+  
+  for (ss = 0; ss < sSlides.length; ss++) {
+  
+    sSlides[ss].style.display = "none";
+    
+  }
+  
+    sSlides[sIndex-1].style.transition = "1s";
+    sSlides[sIndex-1].style.display = "block";
+    sSlides[sIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      sSlides[sIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change sitter slides
+    // ====================================================
+    $('#sitter-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusSSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusSSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+            // open sitter slide show
+// =======================================================
+function openSSlides() {
+  stu.toggleClass('#sitter-slides','hide');
+  showSSlides(sIndex);
+}
+      
+// sitter slide show
+// =======================================================
+var sIndex = 1;
+showSSlides(sIndex);
+      
+function plusSSlides(n) {
+  hideSSlides(sIndex);
+  setTimeout( function() { showSSlides(sIndex += n); }, 800);
+}
+      
+function currentSSlide(n) {
+  showSSlides(sIndex = n);
+}
+      
+function hideSSlides(n) {
+  var sSlides = document.getElementsByClassName("sSlide");
+  
+  sSlides[sIndex-1].style.transition = "0.8s";
+  sSlides[sIndex-1].style.opacity = "0";
+  
+}
+function showSSlides(n) {
+  var ss;
+  var sSlides = document.getElementsByClassName("sSlide");
+  
+  if (n > sSlides.length) {sIndex = 1} 
+  if (n < 1) {sIndex =sSlides.length}
+  
+  for (ss = 0; ss < sSlides.length; ss++) {
+  
+    sSlides[ss].style.display = "none";
+    
+  }
+  
+    sSlides[sIndex-1].style.transition = "1s";
+    sSlides[sIndex-1].style.display = "block";
+    sSlides[sIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      sSlides[sIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change sitter slides
+    // ====================================================
+    $('#sitter-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusSSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusSSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+            // open family slide show
+// =======================================================
+function openFSlides() {
+  stu.toggleClass('#family-slides','hide');
+  showFSlides(fIndex);
+}
+      
+// family slide show
+// =======================================================
+var fIndex = 1;
+showFSlides(fIndex);
+      
+function plusFSlides(n) {
+  hideFSlides(fIndex);
+  setTimeout( function() { showFSlides(fIndex += n); }, 800);
+}
+      
+function currentFSlide(n) {
+  showFSlides(fIndex = n);
+}
+      
+function hideFSlides(n) {
+  var fSlides = document.getElementsByClassName("fSlide");
+  
+  fSlides[fIndex-1].style.transition = "0.8s";
+  fSlides[fIndex-1].style.opacity = "0";
+  
+}
+function showFSlides(n) {
+  var fs;
+  var fSlides = document.getElementsByClassName("fSlide");
+  
+  if (n > fSlides.length) {fIndex = 1} 
+  if (n < 1) {fIndex =fSlides.length}
+  
+  for (fs = 0; fs < fSlides.length; fs++) {
+  
+    fSlides[fs].style.display = "none";
+    
+  }
+  
+    fSlides[fIndex-1].style.transition = "1s";
+    fSlides[fIndex-1].style.display = "block";
+    fSlides[fIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      fSlides[fIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change family slides
+    // ====================================================
+    $('#family-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusFSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusFSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+      
+                  // open fashion slide show
+// =======================================================
+function openFaSlides() {
+  stu.toggleClass('#fashion-slides','hide');
+  showFaSlides(faIndex);
+}
+      
+// fashion slide show
+// =======================================================
+var faIndex = 1;
+showFaSlides(faIndex);
+      
+function plusFaSlides(n) {
+  hideFaSlides(faIndex);
+  setTimeout( function() { showFaSlides(faIndex += n); }, 800);
+}
+      
+function currentFaSlide(n) {
+  showFaSlides(faIndex = n);
+}
+      
+function hideFaSlides(n) {
+  var faSlides = document.getElementsByClassName("faSlide");
+  
+  faSlides[faIndex-1].style.transition = "0.8s";
+  faSlides[faIndex-1].style.opacity = "0";
+  
+}
+function showFaSlides(n) {
+  var fas;
+  var faSlides = document.getElementsByClassName("faSlide");
+  
+  if (n > faSlides.length) {faIndex = 1} 
+  if (n < 1) {faIndex =faSlides.length}
+  
+  for (fas = 0; fas < faSlides.length; fas++) {
+  
+    faSlides[fas].style.display = "none";
+    
+  }
+  
+    faSlides[faIndex-1].style.transition = "1s";
+    faSlides[faIndex-1].style.display = "block";
+    faSlides[faIndex-1].style.opacity = "0";
+    
+    setTimeout(function(){
+    
+      faSlides[faIndex-1].style.opacity = "1";
+    
+    }, 50);
+    
+}
+// scroll mousewheel to change fashion slides
+    // ====================================================
+    $('#fashion-slides').on( 'DOMMouseScroll mousewheel', function ( event ) {
+      
+      var wrap = document.getElementById('slide-show');
+      
+      if(wrap.style.display == "none") {
+        
+        // prevent page from scrolling
+        return true;
+        
+        } else {
+      
+        if(event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) {
+        
+          //scroll down
+          plusFaSlides(1);
+        
+        } else {
+        
+          //scroll up
+          plusFaSlides(-1);
+        }
+        
+      }
+      
+      //prevent page fom scrolling
+      return false;
+    });
+</script>
+  
+<script>
+//enable touch events to change engagement slides
+      // ==================================================
+      window.addEventListener('load', function(){
+          var eng = document.getElementById('engagement-slides')
+          var hidetimer = null
+          
+          swipedetect(eng, function(swipedir){
+            if (swipedir != 'none'){
+                  clearTimeout(hidetimer)
+                  plusESlides(swipedir)
+              }
+          })
+          
+      }, false)
+                              
+          function swipedetect(eng, callback){
+            
+            var touchsurface = eng,
+              swipedir,
+              startX,
+              startY,
+              distX,
+              distY,
+              threshold = 60, //required min distance traveled to be considered swipe
+              restraint = 30, // maximum distance allowed at the same time in perpendicular direction
+              allowedTime = 700, // maximum time allowed to travel that distance
+              elapsedTime,
+              startTime,
+              handleswipe = callback || function(swipedir){}
+        
+            touchsurface.addEventListener('touchstart', function(e){
+              var touchobj = e.changedTouches[0]
+              swipedir = 'none'
+              dist = 0
+              startX = touchobj.pageX
+              startY = touchobj.pageY
+              startTime = new Date().getTime() // record time when finger first makes contact with surface
+             
+	            if(touchsurface.style.display != "none") {
+                e.preventDefault() // prevent scrolling when inside DIV
+              }
+            }, false)
+        
+            touchsurface.addEventListener('touchmove', function(e){
+              if (touchsurface.style.display != "none") {
+                e.preventDefault() // prevent scrolling when inside DIV
+              }
+            }, false)
+        
+          touchsurface.addEventListener('touchend', function(e){
+              var touchobj = e.changedTouches[0]
+              distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+              distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+              elapsedTime = new Date().getTime() - startTime // get time elapsed
+              if (elapsedTime <= allowedTime){ // first condition for awipe met
+                  if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                      swipedir = (distX < 0)? 1 : -1 // if dist traveled is negative, it indicates left swipe
+                  }
+                  else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                      swipedir = (distY < 0)? 1 : -1 // if dist traveled is negative, it indicates down swipe
+                  }
+              }
+	      if (touchsurface.style.display != "none") {
+                handleswipe(swipedir)
+ //               e.preventDefault()
+	      }
+          }, false)
+      	//continue to trigger click event from the target of any touch event at the document level
+      	window.on('touchend', function(e){
+      		$(e.target).trigger('click');
+      	});
+      
+          }
+</script>
 
 </body>
 </html>
